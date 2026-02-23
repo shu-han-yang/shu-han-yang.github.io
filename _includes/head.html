@@ -1,2 +1,9 @@
-<title>Sunny Draws - Free illustration PNG download</title>
+<title>
+	{% if page.title == "Home" %}
+		Sunny Draws - Free illustration PNG download
+	{% else %}
+		{{ page.title }} | {{ site.site_title }} - {{ site.site_tagline }}
+	{% endif %}
+</title>
+
 <link rel="stylesheet" type="text/css" href="stylesheet.css">

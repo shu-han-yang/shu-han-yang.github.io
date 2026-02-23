@@ -1,3 +1,7 @@
+site_title: Sunny Draws
+site_tagline: Free illustration PNG download
+
+
 collections:
   illustrations:
     output: true
