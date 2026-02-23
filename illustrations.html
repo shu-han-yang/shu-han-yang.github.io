@@ -1,0 +1,15 @@
+---
+layout: default
+title: All Illustrations
+---
+
+<ul>
+{% for item in site.illustrations %}
+  <li>
+    <a href="{{ item.url }}">
+      <img src="{{ item.file }}" width="200">
+      <p>{{ item.title }}</p>
+    </a>
+  </li>
+{% endfor %}
+</ul>

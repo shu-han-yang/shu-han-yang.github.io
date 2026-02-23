@@ -1,0 +1,4 @@
+collections:
+  illustrations:
+    output: true
+    permalink: /illustrations/:name/
