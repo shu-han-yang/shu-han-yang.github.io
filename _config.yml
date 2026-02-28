@@ -5,4 +5,4 @@ site_tagline: Free illustration PNG download
 collections:
   illustrations:
     output: true
-    permalink: /illustrations/:name/
+    permalink: /illustrations/:categories/:name/
