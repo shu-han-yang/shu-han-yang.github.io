@@ -2,12 +2,14 @@
 	{% if page.title == "Home" %}
 		Sunny Draws - Free illustration PNG download
 	{% else %}
-		{{ page.title }} | {{ site.site_title }} - {{ site.site_tagline }}
+		{{ page.title.en }} | {{ site.site_title }} - {{ site.site_tagline }}
 	{% endif %}
 </title>
 
 <link rel="stylesheet" type="text/css" href="/stylesheet.css">
-<meta name="description" content="{{ page.description }}">
+{% if page.description %}
+  <meta name="description" content="{{ page.description.en | strip_html | strip_newlines | escape }}">
+{% endif %}
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2H0C08CQV"></script>

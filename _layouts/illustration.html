@@ -2,19 +2,26 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
+<h1>{{ page.title.en }}</h1>
+<h2>{{ page.title.zh }}</h2>
+<h2>{{ page.title.ja }}</h2>
 
-<img src="/assets/images/illustrations/sample/{{ page.image }}-sample.png" alt="{{ page.title }} sample">
+<img src="/assets/images/illustrations/sample/{{ page.image }}-sample.png" alt="{{ page.title.en }} sample">
 
-<p>Category: {{ page.category }}</p>
+<p>Category: {{ site.data.categories[page.category].en }}</p>
+
 <p>Tags: 
 {% for tag in page.tags %}
   {{ tag }}
 {% endfor %}
 </p>
 
-
-
-<a href="/assets/images/illustrations/download/{{ page.image }}.png" download>
-  Download PNG
+<a href="/assets/images/illustrations/download/{{ page.image }}.png" 
+   download="{{ page.image }}.png"
+   class="download-btn" 
+   onclick="gtag('event', 'file_download', {
+       'file_name': '{{ page.title.en | escape }}',
+       'file_extension': 'png'
+     });">
+   Download PNG
 </a>
