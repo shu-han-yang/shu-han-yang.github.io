@@ -6,7 +6,7 @@
 	{% endif %}
 </title>
 
-<link rel="stylesheet" type="text/css" href="/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="{{ '/stylesheet.css' | relative_url }}">
 {% if page.description %}
   <meta name="description" content="{{ page.description.en | strip_html | strip_newlines | escape }}">
 {% endif %}

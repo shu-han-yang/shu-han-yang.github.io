@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html>
 	<head>
+
 		{% include head.html %}
 		
 	</head>
 	<body>
-		<nav>
-			<a href="/index.html">Home</a>
-			<a href="/illustrations.html">Illustrations</a>
-			<a href="/license.html">License</a>
-		</nav>
-	
+		<nav class="top-nav">
+			<div class="container">
+				<a href="/">Home</a>
+				<span>|</span>
+				<a href="/illustrations">Free Illustrations</a>
+				<span>|</span>
+				<a href="/license">License</a>
+				<span>|</span>
+				<a href="/about">About</a>
+    			</div>
+    		</nav>
+
+		{% unless page.url == "/" %}
+    		{% include header.html %}
+  		{% endunless %}
+
 		{{ content }}
 
+		{% include footer.html %}
+		
 	</body>
 </html>
 

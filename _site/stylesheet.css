@@ -1,3 +1,179 @@
-a {
-	color:#0000EE;
+/* =========================================
+   SunnyDraws 專屬樣式表 - 2026 修正版
+   ========================================= */
+
+:root {
+  --primary-purple: #9D85D1;    /* 標題與 Logo 的紫色 */
+  --light-purple: #E6E0F8;      /* 淺色背景或分隔線 */
+  --overlay-gradient: linear-gradient(180deg, rgba(157, 133, 209, 0) 30%, rgba(123, 97, 255, 0.6) 100%);
+  --bg-color: #ffffff;
+  --text-main: #333333;
+}
+
+body {
+  font-family: 'SF Pro Display', 'PingFang TC', 'Heiti TC', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* 容器設定 */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Header 頂部導覽 --- */
+.top-nav {
+  text-align: right;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: var(--primary-purple);
+  margin: 0 8px;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+.top-nav span {
+  color: #cccccc;   /* 把這條線變成淡淡的灰色，不要太搶戲 */
+  margin: 0 0px;    /* 讓線的左右留出一點空白，讓文字呼吸 */
+  font-size: 12px;   /* 讓線比文字稍微小一點點，看起來更精緻 */
+}
+
+/* --- logo區 --- */
+.hero-container {
+  text-align: center;
+  padding: 40px 0 60px;
+  border-bottom: 1px solid var(--light-purple);
+}
+
+.logo-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-area h1 {
+  font-size: 24px;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin: 2px 0;
+}
+
+.tagline {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* --- Home header area --- */
+.home-header{
+    text-align: center;
+}
+
+/* --- Main Content (Category Blocks) --- */
+.main-content {
+  padding: 40px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.category-grid {
+  display: grid;
+  /* 這裡設定一行 4 個卡片 */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* --- 卡片元件 --- */
+.category-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1 / 1; /* 保持正方形 */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 👉 你強調的紫色漸層圖層 */
+.purple-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-gradient);
+  z-index: 1;
+}
+
+.card-title {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+/* --- Footer 頁尾 --- */
+.site-footer {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.support-link {
+  color: var(--primary-purple);
+  text-decoration: none;
+  font-size: 15px;
+  border: 1px solid var(--primary-purple);
+  padding: 8px 20px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.support-link:hover {
+  background-color: var(--primary-purple);
+  color: white;
+}
+
+/* 響應式：手機版變 2 欄 */
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
