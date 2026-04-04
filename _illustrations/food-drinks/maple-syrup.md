@@ -4,6 +4,7 @@ title:
   en: "Maple Syrup"
   zh: "楓糖漿"
   ja: "メープルシロップ"
+date: 2026-04-04
 image: "maple-syrup"
 category: "food-drinks"
 tags:

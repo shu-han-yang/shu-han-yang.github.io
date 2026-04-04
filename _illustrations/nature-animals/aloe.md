@@ -4,6 +4,7 @@ title:
   en: "Aloe"
   zh: "蘆薈"
   ja: "アロエ"
+date: 2026-04-04
 image: "aloe"
 category: "nature-animals"
 tags:

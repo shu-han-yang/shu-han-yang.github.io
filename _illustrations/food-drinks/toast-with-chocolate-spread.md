@@ -4,6 +4,7 @@ title:
   en: "Toast With Chocolate Spread"
   zh: "巧克力吐司"
   ja: "チョコトースト"
+date: 2026-04-04
 image: "toast-with-chocolate-spread"
 category: "food-drinks"
 tags:

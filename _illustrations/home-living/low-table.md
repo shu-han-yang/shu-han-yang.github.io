@@ -4,6 +4,7 @@ title:
   en: "Low Table"
   zh: "矮桌"
   ja: "ローテーブル"
+date: 2026-04-04
 image: "low-table"
 category: "home-living"
 tags:

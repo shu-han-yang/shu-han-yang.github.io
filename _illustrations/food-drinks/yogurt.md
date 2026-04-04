@@ -4,6 +4,7 @@ title:
   en: "Yogurt"
   zh: "優格"
   ja: "ヨーグルト"
+date: 2026-04-04
 image: "yogurt"
 category: "food-drinks"
 tags:

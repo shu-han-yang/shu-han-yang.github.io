@@ -4,6 +4,7 @@ title:
   en: "Salmon Sushi"
   zh: "鮭魚壽司"
   ja: "サーモン寿司"
+date: 2026-04-04
 image: "salmon-sushi"
 category: "food-drinks"
 tags:

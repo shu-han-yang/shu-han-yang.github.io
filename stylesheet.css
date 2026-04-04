@@ -1,34 +1,44 @@
 ---
 ---
 /* =========================================
-   SunnyDraws 專屬樣式表 - 2026 修正版
+   SunnyDraws 完整樣式表 - 最終佈局與配色整合
    ========================================= */
 
 :root {
-  --primary-purple: #9D85D1;    /* 標題與 Logo 的紫色 */
-  --light-purple: #E6E0F8;      /* 淺色背景或分隔線 */
-  --overlay-gradient: linear-gradient(180deg, rgba(157, 133, 209, 0) 30%, rgba(123, 97, 255, 0.6) 100%);
-  --bg-color: #ffffff;
-  --text-main: #333333;
+  --primary-purple: #6D5D94; 
+  --accent-beige: #F9F1DC; 
+  --light-purple: #D4CEDD;
+  --text-light: #F9F1DC; 
+  --text-dark: #4A3F6B;  
+  --overlay-gradient: linear-gradient(180deg, rgba(109, 93, 148, 0) 30%, rgba(74, 63, 107, 0.7) 100%);
 }
 
+/* --- 1. 基礎佈局與置中 --- */
 body {
   font-family: 'SF Pro Display', 'PingFang TC', 'Heiti TC', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-main);
+  background-color: var(--primary-purple); 
+  color: var(--text-light); 
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* 容器設定 */
+.home-header{
+  text-align: center;
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* --- Header 頂部導覽 --- */
+/* --- 2. Header & Nav --- */
 .top-nav {
   text-align: right;
   padding: 20px 0;
@@ -37,25 +47,22 @@ body {
 
 .top-nav a {
   text-decoration: none;
-  color: var(--primary-purple);
+  color: var(--light-purple);
   margin: 0 8px;
+  transition: 0.3s;
 }
 
-.top-nav a:hover {
-  text-decoration: underline;
-}
+.top-nav a:hover { color: white; }
 
 .top-nav span {
-  color: #cccccc;   /* 把這條線變成淡淡的灰色，不要太搶戲 */
-  margin: 0 0px;    /* 讓線的左右留出一點空白，讓文字呼吸 */
-  font-size: 12px;   /* 讓線比文字稍微小一點點，看起來更精緻 */
+  color: rgba(255, 255, 255, 0.2);
+  margin: 0 2px;
 }
 
-/* --- logo區 --- */
 .hero-container {
   text-align: center;
-  padding: 40px 0 60px;
-  border-bottom: 1px solid var(--light-purple);
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(249, 241, 220, 0.15);
 }
 
 .logo-area {
@@ -63,17 +70,20 @@ body {
   justify-content: center;
   align-items: center;
   gap: 15px;
+  margin-bottom: 10px;
 }
 
 .logo-area h1 {
-  font-size: 24px;
+  font-size: 32px;
   margin: 0;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  color: var(--accent-beige);
 }
 
 .subtitle {
   font-size: 20px;
-  margin: 2px 0;
+  margin: 5px 0;
+  color: var(--light-purple);
 }
 
 .tagline {
@@ -81,101 +91,202 @@ body {
   opacity: 0.8;
 }
 
-/* --- Home header area --- */
-.home-header{
-    text-align: center;
-}
-
-/* --- Main Content (Category Blocks) --- */
+/* --- 3. Home / Index 排版 --- */
 .main-content {
-  padding: 40px 0;
+  padding: 60px 0;
+  flex: 1;
 }
 
+/* 之前遺失的 section-title 回來了 */
 .section-title {
   text-align: center;
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 40px;
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--accent-beige);
 }
 
 .category-grid {
   display: grid;
-  /* 這裡設定一行 4 個卡片 */
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 25px;
+  width: 100%;
 }
 
-/* --- 卡片元件 --- */
 .category-card {
   display: block;
   text-decoration: none;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   position: relative;
-  aspect-ratio: 1 / 1; /* 保持正方形 */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+  aspect-ratio: 1 / 1;
+  background-color: var(--accent-beige);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .category-card:hover {
-  transform: translateY(-5px);
-}
-
-.card-image {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* 👉 你強調的紫色漸層圖層 */
-.purple-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--overlay-gradient);
-  z-index: 1;
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
 
 .card-title {
-  position: relative;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
   z-index: 2;
   color: white;
   font-size: 18px;
   font-weight: 600;
-  margin: 0;
   text-align: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-/* --- Footer 頁尾 --- */
+/* --- 4. Illustration 獨立頁面佈局 --- */
+.illustration-detail-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+  background-color: var(--accent-beige);
+  color: var(--text-dark);
+  padding: 6px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.breadcrumb-item.current {
+  background-color: transparent;
+  border: 1px solid var(--accent-beige);
+  color: var(--accent-beige);
+}
+
+.illustration-title {
+  font-size: 36px;
+  color: var(--accent-beige);
+  margin-bottom: 30px;
+}
+
+.illustration-image-wrapper {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 40px;
+  border-radius: 24px;
+  border: 6px solid var(--accent-beige);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  overflow: hidden;
+  background-color: white;
+}
+
+.illustration-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.illustration-tags {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.tag-item {
+  background-color: rgba(249, 241, 220, 0.1);
+  color: var(--accent-beige);
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--accent-beige);
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.tag-item:hover {
+  background-color: var(--accent-beige);
+  color: var(--primary-purple);
+}
+
+/* --- 5. 按鈕與 License --- */
+.download-btn {
+  display: inline-block;
+  background-color: var(--accent-beige);
+  color: var(--text-dark);
+  padding: 16px 60px;
+  border-radius: 40px;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.license-info-box {
+  max-width: 520px;
+  width: 100%;
+  margin: 60px auto 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(249, 241, 220, 0.3);
+  border-radius: 24px;
+  padding: 35px;
+  text-align: left;
+}
+
+.license-info-box h3 { color: var(--accent-beige); margin-top: 0; }
+
+.license-agreement {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 25px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* --- 6. 之前遺失的 Footer 回來了 --- */
 .site-footer {
   text-align: center;
-  padding: 60px 0;
+  padding: 80px 0;
+  border-top: 1px solid rgba(249, 241, 220, 0.1);
 }
 
 .support-link {
-  color: var(--primary-purple);
+  color: var(--accent-beige);
   text-decoration: none;
   font-size: 15px;
-  border: 1px solid var(--primary-purple);
-  padding: 8px 20px;
-  border-radius: 20px;
+  border: 1.5px solid var(--accent-beige);
+  padding: 12px 30px;
+  border-radius: 30px;
   transition: 0.3s;
 }
 
 .support-link:hover {
-  background-color: var(--primary-purple);
-  color: white;
+  background-color: var(--accent-beige);
+  color: var(--primary-purple);
 }
 
-/* 響應式：手機版變 2 欄 */
-@media (max-width: 768px) {
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* 響應式佈局 */
+@media (max-width: 900px) {
+  .category-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .illustration-title { font-size: 28px; }
+  .download-btn { width: 100%; padding: 16px 0; text-align: center; }
 }
