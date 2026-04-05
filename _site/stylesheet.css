@@ -288,3 +288,81 @@ body {
   .illustration-title { font-size: 28px; }
   .download-btn { width: 100%; padding: 16px 0; text-align: center; }
 }
+
+
+
+/* --- 插圖總覽頁：一排三格扁平卡片 --- */
+
+.illustration-horizontal-grid {
+  display: grid;
+  /* 關鍵修改：改為 repeat(3, 1fr) */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 15px; /* 間距稍微縮小一點點，留給卡片更多空間 */
+  width: 100%;
+}
+
+.horizontal-card {
+  background-color: var(--accent-beige);
+  border-radius: 16px; /* 圓角稍微調小，符合小卡片的比例 */
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card-link {
+  display: flex;
+  text-decoration: none;
+  height: 90px; /* 高度調低一點，讓它看起來更「扁」更精緻 */
+}
+
+/* 卡片左側：縮圖區 */
+.thumb-area {
+  width: 90px; /* 寬高一致維持正方形 */
+  min-width: 90px;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.thumb-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 卡片右側：標題區 */
+.info-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 12px; /* 內縮小一點，避免文字太擠 */
+}
+
+.info-area h3 {
+  color: var(--text-dark);
+  font-size: 14px; /* 字體調小一點點，適合三格佈局 */
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.2;
+  /* 預防長標題撐破卡片，超過兩行顯示省略號 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 響應式：平板版改回二排，手機版改回一排 */
+@media (max-width: 900px) {
+  .illustration-horizontal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .illustration-horizontal-grid {
+    grid-template-columns: 1fr;
+  }
+}

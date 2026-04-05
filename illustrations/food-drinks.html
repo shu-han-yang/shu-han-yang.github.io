@@ -1,0 +1,39 @@
+---
+layout: default
+pagination: 
+  enabled: true
+  collection: illustrations
+  category: food-drinks  # 👈 對應 MD 裡的類別
+  indexpage: 'food-drinks' # 👈 防止路徑衝突
+---
+
+<main class="main-content container">
+  <nav class="breadcrumb-nav"> 
+    <a href="/illustrations/" class="breadcrumb-item link">ALL</a>
+    <span class="separator">&gt;</span>
+    <div class="breadcrumb-item current">
+      {{ site.data.categories['food-drinks'].en }} </div>
+  </nav>
+
+
+  <h1 class="section-title">{{ site.data.categories['food-drinks'].en }}</h1>
+
+  <div class="illustration-horizontal-grid">
+    {% for item in paginator.posts %}
+      <article class="horizontal-card">
+        <a href="{{ item.url }}" class="card-link">
+          <div class="thumb-area">
+            <img src="/assets/images/illustrations/thumbnail/{{ item.image }}-thumbnail.png" alt="{{ item.title.en }} thumbnail">
+          </div>
+          <div class="info-area">
+            <h3>{{ item.title.en }}</h3>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+
+{% include paginator.html %}
+
+  
+</main>
