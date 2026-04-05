@@ -5,7 +5,7 @@
 
   {% for cat in site.data.categories %}
     {% assign category_slug = cat[0] %}
-    <a href="/illustrations/{{ category_slug | slugify }}/" 
+    <a href="{{ '/illustrations/' | relative_url }}{{ category_slug | slugify }}/" 
        class="tag-item {% if page.pagination.category == category_slug %}active{% endif %}">
       {{ cat[1].en }}
     </a>
