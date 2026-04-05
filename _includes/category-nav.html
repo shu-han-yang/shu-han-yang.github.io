@@ -1,0 +1,13 @@
+<nav class="category-filters" style="text-align: center; margin-bottom: 40px;">
+  <a href="/illustrations/" class="tag-item {% unless page.pagination.category %}active{% endunless %}">
+    All
+  </a>
+
+  {% for cat in site.data.categories %}
+    {% assign category_slug = cat[0] %}
+    <a href="/illustrations/{{ category_slug | slugify }}/" 
+       class="tag-item {% if page.pagination.category == category_slug %}active{% endif %}">
+      {{ cat[1].en }}
+    </a>
+  {% endfor %}
+</nav>

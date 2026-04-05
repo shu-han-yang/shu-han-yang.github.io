@@ -10,13 +10,8 @@ pagination:
 <main class="main-content container illustration-list-page">
   <h1 class="section-title">All Illustrations</h1>
 
-  <div class="category-filters">
-    {% for cat in site.data.categories %}
-      <a href="/illustrations/{{ cat[0] | slugify }}/" class="tag-item">
-        {{ cat[1].en }}
-      </a>
-    {% endfor %}
-  </div>
+{% include category-nav.html %}
+
 
   <div class="illustration-horizontal-grid">
     {% for item in paginator.posts %}
@@ -33,56 +28,6 @@ pagination:
     {% endfor %}
   </div>
 
-  {% if paginator.total_pages > 1 %}
-  <nav class="pagination-wrapper">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="page-link">← Prev</a>
-    {% endif %}
-    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="page-link">Next →</a>
-    {% endif %}
-  </nav>
-  {% endif %}
+{% include paginator.html %}
+
 </main>
-
-
-<!--
-<div class="container">
-  <nav class="category-nav">
-    <a href="/illustrations.html" class="btn active">All</a>
-    <a href="/categories/animal/" class="btn">動物</a>
-    <a href="/categories/food/" class="btn">食物</a>
-    </nav>
-
-  <hr class="divider">
-
-  <div class="illustration-grid">
-    {% for item in paginator.posts %}
-      <article class="illustration-card">
-        <a href="{{ item.url }}">
-          <div class="img-container">
-            <img src="/assets/images/illustrations/thumbnail/{{ item.image }}-thumbnail.png" alt="{{ item.title.en }} thumbnail- SunnyDraws" loading="lazy">
-          </div>
-          <h3>{{ item.title.en }}</h3>
-        </a>
-      </article>
-    {% endfor %}
-  </div>
-
-  {% if paginator.total_pages > 1 %}
-  <nav class="pagination-wrapper">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}">← 上一頁</a>
-    {% endif %}
-    
-    <span class="page-number">第 {{ paginator.page }} 頁</span>
-
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}">下一頁 →</a>
-    {% endif %}
-  </nav>
-  {% endif %}
-</div>
-
--->

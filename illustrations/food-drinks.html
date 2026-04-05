@@ -8,15 +8,9 @@ pagination:
 ---
 
 <main class="main-content container">
-  <nav class="breadcrumb-nav"> 
-    <a href="/illustrations/" class="breadcrumb-item link">ALL</a>
-    <span class="separator">&gt;</span>
-    <div class="breadcrumb-item current">
-      {{ site.data.categories['food-drinks'].en }} </div>
-  </nav>
-
-
   <h1 class="section-title">{{ site.data.categories['food-drinks'].en }}</h1>
+
+{% include category-nav.html %}
 
   <div class="illustration-horizontal-grid">
     {% for item in paginator.posts %}
