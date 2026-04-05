@@ -2,6 +2,9 @@ site_title: Sunny Draws
 site_tagline: Free illustration PNG download
 
 
+plugins:
+  - jekyll-paginate-v2
+
 collections:
   illustrations:
     output: true
