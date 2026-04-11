@@ -8,16 +8,40 @@ plugins:
 collections:
   illustrations:
     output: true
-    permalink: /illustrations/:categories/:name/
+    permalink: /illustrations/:name/
+    #permalink: /illustrations/:categories/:name/
 
 
 # 分頁插件設定(使用 jekyll-paginate-v2 插件）
 pagination:
   enabled: true
-  collection: 'illustrations'
-  per_page: 20
-  permalink: '/illustrations/page/:num/' # 這是「總覽分頁」的網址
+  collections:
+    illustrations:
+      per_page: 12
+      permalink: '/illustrations/page/:num/' # 這是「總覽分頁」的網址
   #indexpage: 'illustrations' # 👈 強制指定分頁的「主角」是 illustrations
   #extension: 'html'           # 👈 強制副檔名，防止出現那個奇怪的 "- .html"
   sort_field: 'date'
   sort_reverse: true
+
+autopages:
+  enabled: true
+
+  collections:
+    enabled: false   # ❗ 一定要這行
+
+  tags:
+    enabled: false   # ❗ 一定要這行
+
+  categories:
+    enabled: true
+    collections:
+      - illustrations   # 👈🔥 這行是關鍵
+    layouts:
+      - 'illustration-category.html'
+    title: 'Posts in category :cat'
+    permalink: '/illustrations/:cat/'
+
+  pagination:   # 👈🔥🔥🔥 加這段
+      enabled: true
+      per_page: 12
