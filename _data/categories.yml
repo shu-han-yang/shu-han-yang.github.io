@@ -1,6 +1,6 @@
 food-drinks:
   en: Food & Drinks
-  zh: 食物與飲品
+  zh: 食物飲料
   ja: フード＆ドリンク
 
 home-living:
@@ -10,27 +10,27 @@ home-living:
 
 kitchen-table:
   en: Kitchen & Table
-  zh: 廚房與餐桌
+  zh: 廚房餐桌
   ja: キッチン＆テーブル
 
 fashion-wear:
   en: Fashion & Wear
-  zh: 時尚與穿搭
+  zh: 時尚衣著
   ja: ファッション＆ウェア
 
 nature-animals:
   en: Nature & Animals
-  zh: 自然與動物
+  zh: 大自然
   ja: 自然と動物
 
 travel-movement:
   en: Travel & Movement
-  zh: 旅行與移動
+  zh: 旅行移動
   ja: 旅行と移動
 
 lifestyle-mood:
   en: Lifestyle & Mood
-  zh: 生活風格與氛圍
+  zh: 生活儀式感
   ja: ライフスタイルとムード
 
 characters-stories:

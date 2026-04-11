@@ -1,0 +1,36 @@
+---
+layout: default
+title:
+  en: Travel & Movement
+permalink: /illustrations/travel-movement/
+pagination: 
+  enabled: true
+  collection: illustrations
+  category: travel-movement  # 👈 對應 MD 裡的類別
+  indexpage: 'index'
+---
+
+<main class="main-content container">
+  <h1 class="section-title">{{ site.data.categories['travel-movement'].en }}</h1>
+
+{% include category-nav.html %}
+
+  <div class="illustration-horizontal-grid">
+    {% for item in paginator.posts %}
+      <article class="horizontal-card">
+        <a href="{{ item.url }}" class="card-link">
+          <div class="thumb-area">
+            <img src="/assets/images/illustrations/thumbnail/{{ item.image }}-thumbnail.png" alt="{{ item.title.en }} thumbnail">
+          </div>
+          <div class="info-area">
+            <h3>{{ item.title.en }}</h3>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+
+{% include paginator.html %}
+
+  
+</main>

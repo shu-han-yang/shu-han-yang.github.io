@@ -246,32 +246,50 @@ body {
 }
 
 .license-info-box {
-  max-width: 520px;
+  box-sizing: border-box; /* 確保寬度計算包含 Padding */
+  max-width: 600px;
   width: 100%;
-  margin: 60px auto 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(249, 241, 220, 0.3);
-  border-radius: 24px;
+  margin: 60px auto 0;    /* 左右 auto 確保置中 */
   padding: 35px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
   text-align: left;
 }
 
 .license-info-box h3 { color: var(--accent-beige); margin-top: 0; }
 
-.license-agreement {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 25px;
-  padding-top: 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+
+.license-info-box ul {
+  list-style: none;       /* 拿掉圓點 */
+  padding-left: 20px ;             /* 歸零縮排 */
 }
 
-/* --- 6. 之前遺失的 Footer 回來了 --- */
+.license-info-box li {
+  margin-bottom: 10px;  /* 讓每個清單項目之間有一點呼吸空間 */
+  display: flex;        /* 讓打勾符號跟文字對齊更漂亮 */
+  align-items: center;
+}
+
+.license-agreement {
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  margin-top: 34px;
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.license-agreement .icon {
+  margin-right: 2px; /* 讓手指跟後面的文字保持一點距離，不會擠在一起 */
+  font-size: 1.3em;  /* 讓圖示稍微大一點點 */
+}
+
+
+/* --- 6. Footer --- */
 .site-footer {
   text-align: center;
-  padding: 80px 0;
-  border-top: 1px solid rgba(249, 241, 220, 0.1);
+  padding: 50px 0;
+  border-top: 2px solid rgba(249, 241, 220, 0.1);
 }
 
 .support-link {
