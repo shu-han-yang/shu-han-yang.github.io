@@ -307,16 +307,6 @@ body {
   color: var(--primary-purple);
 }
 
-/* 響應式佈局 */
-@media (max-width: 767px) {
-  .category-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 767px) {
-  .illustration-title { font-size: 28px; }
-  .download-btn { width: 100%; padding: 16px 0; text-align: center; }
-}
-
 
 
 /* --- 插圖總覽頁：一排三格扁平卡片 --- */
@@ -419,8 +409,8 @@ body {
 
 /* 響應式調整 */
 @media (max-width: 767px) {
-  .illustration-horizontal-grid { grid-template-columns: repeat(2, 1fr); }
-}
-c
-  .illustration-horizontal-grid { grid-template-columns: 1fr; }
+  .illustration-horizontal-grid { grid-template-columns: repeat(1, 1fr); }
+  .category-grid { grid-template-columns: repeat(1, 1fr); }
+  .illustration-title { font-size: 28px; }
+  .download-btn { width: 100%; padding: 16px 0; text-align: center; }s
 }
