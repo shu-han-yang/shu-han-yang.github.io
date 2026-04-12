@@ -10,7 +10,7 @@ home-living:
 
 kitchen-table:
   en: Kitchen & Table
-  zh: 廚房餐桌
+  zh: 餐廚食具
   ja: キッチン＆テーブル
 
 fashion-wear:
@@ -20,17 +20,17 @@ fashion-wear:
 
 nature-animals:
   en: Nature & Animals
-  zh: 大自然
+  zh: 自然動植物
   ja: 自然と動物
 
 travel-movement:
   en: Travel & Movement
-  zh: 旅行移動
+  zh: 旅行與交通
   ja: 旅行と移動
 
 lifestyle-mood:
   en: Lifestyle & Mood
-  zh: 生活儀式感
+  zh: 生活儀式
   ja: ライフスタイルとムード
 
 characters-stories:

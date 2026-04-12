@@ -1,9 +1,10 @@
 <title>
-	{% if page.title == "Home" %}
-		Sunny Draws - Free illustration PNG download
-	{% else %}
-		{{ page.title.en }} | {{ site.site_title }} - {{ site.site_tagline }}
-	{% endif %}
+{% if page.title == "Home" %}
+  Sunny Draws - Free illustration PNG download
+{% else %}
+  {% assign category_en = site.data.categories[page.autopage.display_name].en %}
+  {{ category_en | default: page.title.en }} | {{ site.site_title }} - {{ site.site_tagline }}
+{% endif %}
 </title>
 
 <link rel="stylesheet" type="text/css" href="{{ '/stylesheet.css' | relative_url }}">
