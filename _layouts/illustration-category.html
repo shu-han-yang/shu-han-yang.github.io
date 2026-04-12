@@ -32,19 +32,16 @@ pagination:
 </main>
 
 
-
+<!--Debug -->
+<div style="width:200px;overflow:auto">
 <pre>
-docs: {{ paginator.docs | size }}
 posts: {{ paginator.posts | size }}
-</pre>
 
-<pre>
 ALL:
 {% for item in site.illustrations %}
 - {{ item.title.en }} | {{ item.category }}
 {% endfor %}
-</pre>
 
-<pre>
 autopage: {{ page.autopage | inspect }}
 </pre>
+</div>

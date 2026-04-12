@@ -11,3 +11,7 @@ __pycache__/
 
 .DS_Store
 .DS_Store
+
+# 忽略 預處理檔案
+assets/images/illustrations/download/to_do/
+assets/images/illustrations/download/output/
