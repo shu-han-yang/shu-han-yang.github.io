@@ -190,7 +190,6 @@ body {
   border: 6px solid var(--accent-beige);
   box-shadow: 0 20px 50px rgba(0,0,0,0.4);
   overflow: hidden;
-  background-color: white;
 }
 
 .illustration-image-wrapper img {

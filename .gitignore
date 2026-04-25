@@ -14,5 +14,9 @@ __pycache__/
 
 # 忽略 預處理檔案
 assets/images/illustrations/download/to_do/
-assets/images/illustrations/download/output/
+assets/images/illustrations/download/script_output/
+assets/images/illustrations/sample/script_output
 tools/
+
+
+assets/images/brand/
