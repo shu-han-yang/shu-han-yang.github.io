@@ -185,8 +185,8 @@ body {
   aspect-ratio: 1 / 1;
   margin-bottom: 40px;
   border-radius: 24px;
-  border: 6px solid var(--accent-beige);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  /*border: 6px solid var(--accent-beige);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);*/
   overflow: hidden;
 }
 
@@ -250,10 +250,13 @@ body {
   padding: 35px;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  text-align: left;
+  text-align: center;
 }
 
-.license-info-box h3 { color: var(--accent-beige); margin-top: 0; }
+.license-info-box h3 { 
+  color: var(--accent-beige); 
+  margin-top: 0;
+ }
 
 
 .license-info-box ul {
@@ -265,20 +268,23 @@ body {
   margin-bottom: 10px;  /* 讓每個清單項目之間有一點呼吸空間 */
   display: flex;        /* 讓打勾符號跟文字對齊更漂亮 */
   align-items: center;
+  gap: 6px;
 }
 
 .license-agreement {
   border-top: 2px solid rgba(255, 255, 255, 0.1);
-  margin-top: 34px;
+  margin-top: 32px;
+  margin-bottom: 0px;
   padding-top: 16px;
   display: flex;
-  align-items: center;
+  text-align: center;
   gap: 6px;
 }
 
-.license-agreement .icon {
-  margin-right: 2px; /* 讓手指跟後面的文字保持一點距離，不會擠在一起 */
+.license-info-box .icon {
+  margin-right: 2px; 
   font-size: 1.3em;  /* 讓圖示稍微大一點點 */
+  padding-right: 2px;
 }
 
 
