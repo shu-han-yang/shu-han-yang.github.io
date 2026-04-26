@@ -99,10 +99,34 @@ body {
 
 .section-title {
   text-align: center;
-  font-size: 28px;
+  font-size: 32px;
   margin-bottom: 40px;
   font-weight: 600;
   color: var(--accent-beige);
+}
+
+.section-content {
+  margin: 0 auto;
+  max-width: 670px;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.section-content ul{
+  margin: 0 40px;
+  min-width: 300px;
+  text-align: left;
+}
+
+.section-content h2{
+  margin-top: 60px;
+}
+
+.section-content strong{
+  display: inline-block;
+  font-size: 1.14em;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .category-grid {
