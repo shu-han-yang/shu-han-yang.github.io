@@ -16,17 +16,32 @@ pagination:
   {% include category-nav.html %}
 
 
-  <div class="illustration-horizontal-grid">
+  <div class="illustration-grid">
     {% for item in paginator.posts %}
-      <article class="horizontal-card">
+      <article class="illustration-card">
         <a href="{{ item.url }}" class="card-link">
-          <div class="thumb-area">
+          <div class="sample-area">
             <img src="/assets/images/illustrations/thumbnail/{{ item.image }}-thumbnail.png" alt="{{ item.title.en }} thumbnail - SunnyDraws">
           </div>
           <div class="info-area">
             <h3>{{ item.title.en }}</h3>
           </div>
         </a>
+
+        <div class="download-btn-area">
+        <div>
+          <a href="/assets/images/illustrations/download/{{ item.image }}.png" 
+            download="{{ item.image }}.png"
+            class="basic-button"
+            onclick="gtag('event', 'file_download', {
+            'file_name': '{{ item.title.en | escape }}',
+            'file_extension': 'png' 
+        });">
+            Download
+          </a>
+        </div>
+        
+        </div>
       </article>
     {% endfor %}
   </div>
