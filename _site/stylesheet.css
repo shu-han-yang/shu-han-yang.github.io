@@ -24,10 +24,6 @@ body {
   min-height: 100vh;
 }
 
-.home-header{
-  text-align: center;
-}
-
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -36,11 +32,29 @@ body {
   box-sizing: border-box;
 }
 
-/* --- 2. Header & Nav --- */
+
+.basic-button {
+  display: inline-block;
+  color: var(--accent-beige);
+  text-decoration: none;
+  font-size: 16px;
+  border: 1.5px solid var(--accent-beige);
+  padding: 12px 35px;
+  border-radius: 30px;
+  transition: 0.3s;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+}
+
+.basic-button:hover {
+  background-color: var(--accent-beige);
+  color: var(--primary-purple);
+}
+
+/* --- Nav --- */
 .top-nav {
   text-align: right;
   padding: 20px 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .top-nav a {
@@ -57,8 +71,10 @@ body {
   margin: 0 2px;
 }
 
-.hero-container {
-  text-align: center;
+/* --- 2. Header (_includes/header.html) --- */
+
+.site-header{
+text-align: center;
   padding: 60px 0;
   border-bottom: 1px solid rgba(249, 241, 220, 0.15);
 }
@@ -76,6 +92,10 @@ body {
   margin: 0;
   letter-spacing: 2px;
   color: var(--accent-beige);
+}
+
+.home-header{
+  text-align: center;
 }
 
 .subtitle {
@@ -132,42 +152,7 @@ body {
   margin-bottom: 20px;
 }
 
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  width: 100%;
-}
 
-.category-card {
-  display: block;
-  text-decoration: none;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  aspect-ratio: 1 / 1;
-  background-color: var(--accent-beige);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.category-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-}
-
-.card-title {
-  position: absolute;
-  bottom: 15px;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
 
 /* --- 4. Illustration 獨立頁面佈局 --- */
 .illustration-detail-page {
@@ -201,7 +186,6 @@ body {
   border: 1px solid var(--accent-beige);
   color: var(--accent-beige);
 }
-
 
 .illustration-image-wrapper {
   width: 100%;
@@ -253,15 +237,9 @@ body {
 
 /* --- 5. 按鈕與 License --- */
 .download-btn {
-  display: inline-block;
-  background-color: var(--accent-beige);
-  color: var(--text-dark);
-  padding: 16px 60px;
-  border-radius: 40px;
   font-size: 20px;
   font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border: 2px solid var(--accent-beige);  
 }
 
 .license-info-box {
@@ -317,57 +295,11 @@ body {
   border-top: 2px solid rgba(249, 241, 220, 0.1);
 }
 
-.support-link {
-  color: var(--accent-beige);
-  text-decoration: none;
-  font-size: 15px;
-  border: 1.5px solid var(--accent-beige);
-  padding: 12px 30px;
-  border-radius: 30px;
-  transition: 0.3s;
-}
-
-.support-link:hover {
-  background-color: var(--accent-beige);
-  color: var(--primary-purple);
-}
 
 
 
-/* --- 插圖總覽頁：一排三格扁平卡片 --- */
+/* --- Illustrations.html: 扁平卡片 --- */
 
-.illustration-horizontal-grid {
-  display: grid;
-  /* 關鍵修改：改為 repeat(3, 1fr) */
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 15px; /* 間距稍微縮小一點點，留給卡片更多空間 */
-  width: 100%;
-}
-
-.horizontal-card {
-  background-color: var(--accent-beige);
-  border-radius: 16px; /* 圓角稍微調小，符合小卡片的比例 */
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.category-filters {
-  display: flex;
-  justify-content: center;
-  gap: 12px; /* 按鈕之間的間距 */
-  margin-bottom: 40px;
-  flex-wrap: wrap; /* 允許自動換行 */
-  line-height: 2.5; /* 👈 重要：增加行高，確保換行時上下按鈕不重疊 */
-}
-
-.card-link {
-  display: flex;
-  text-decoration: none;
-  height: 90px; /* 高度調低一點，讓它看起來更「扁」更精緻 */
-}
-
-/* --- 2. 扁平卡片：一排三格，左右 1:1 分布 --- */
 .illustration-horizontal-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
@@ -390,7 +322,6 @@ body {
   height: 100%;
 }
 
-/* 卡片左側：縮圖區 (佔 50%) */
 .thumb-area {
   flex: 0 0 50%; /* 👈 強制佔據一半寬度 */
   background-color: white;
@@ -408,7 +339,6 @@ body {
   object-fit: contain;
 }
 
-/* 卡片右側：標題區 (佔 50%) */
 .info-area {
   flex: 0 0 50%; /* 👈 強制佔據一半寬度 */
   display: flex;
@@ -426,7 +356,8 @@ body {
   text-align: left;
   /* 標題太長自動換行，最多顯示三行，超過才省略 */
   display: -webkit-box;
-  -webkit-line-clamp: 3; 
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   word-break: break-word; /* 確保長單字也會換行 */
