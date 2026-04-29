@@ -295,6 +295,11 @@ text-align: center;
   border-top: 2px solid rgba(249, 241, 220, 0.1);
 }
 
+.cooyright-info {
+  color: var(--light-purple);
+  font-size: 14px;
+  margin-top: 30px;
+}
 
 
 
