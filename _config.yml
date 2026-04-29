@@ -18,11 +18,10 @@ pagination:
   collections:
     illustrations:
       permalink: '/illustrations/page/:num/' # 這是「總覽分頁」的網址
-  #indexpage: 'illustrations' # 👈 強制指定分頁的「主角」是 illustrations
-  #extension: 'html'           # 👈 強制副檔名，防止出現那個奇怪的 "- .html"
   sort_field: 'date'
   sort_reverse: true
   per_page: 18
+
 
 autopages:
   enabled: true

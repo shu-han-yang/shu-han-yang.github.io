@@ -14,5 +14,8 @@ title: Home
 <main class="main-content container">
   <h2 class="section-title">Free Illustration Library</h2>
 
+<!-- 在 index.html 裡 -->
+{% assign all_items = site.illustrations %}
+<p>目前的插圖總數：<strong>{{ all_items.size }}</strong> 張</p>
 
 </main>
