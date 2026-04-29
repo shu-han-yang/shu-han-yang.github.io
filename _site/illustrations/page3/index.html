@@ -245,15 +245,46 @@
     
   </div>
 
+
+
+
+<nav class="pagination-wrapper">
+  <!-- 1. 上一頁按鈕 -->
   
-  <nav class="pagination-wrapper">
-    
-      <a href="/illustrations/page2/index.html" class="page-direct">← Prev</a>
-    
-    <span class="page-number">Page 3 of 3</span>
-    
-  </nav>
+    <a href="/illustrations/page2/index.html" class="page-direct">← Prev</a>
   
+
+  <!-- 2. 頁碼數字清單 -->
+  <div class="page-numbers-list">
+    
+      
+        <!-- 第一頁：通常路徑比較特殊，建議直接指向基礎路徑 -->
+        <a href="" class="page-num">1</a>
+      
+      
+       |  <!-- 在數字之間加上分隔線 -->
+    
+      
+        <!-- 其他頁面：使用插件提供的路徑規則 -->
+        
+        <a href="/illustrations/page2/" class="page-num">2</a>
+      
+      
+       |  <!-- 在數字之間加上分隔線 -->
+    
+      
+        <!-- 目前所在的頁面：粗體，無連結 -->
+        <span class="page-num current"><b>3</b></span>
+      
+      
+       <!-- 在數字之間加上分隔線 -->
+    
+  </div>
+
+  <!-- 3. 下一頁按鈕 -->
+  
+</nav>
+
 
 </main>
 

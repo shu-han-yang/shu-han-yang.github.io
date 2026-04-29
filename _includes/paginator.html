@@ -1,11 +1,34 @@
-  {% if paginator.total_pages > 1 %}
-  <nav class="pagination-wrapper">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="page-direct">← Prev</a>
-    {% endif %}
-    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="page-direct">Next →</a>
-    {% endif %}
-  </nav>
+
+
+{% if paginator.total_pages > 1 %}
+<nav class="pagination-wrapper">
+  <!-- 1. 上一頁按鈕 -->
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="page-direct">← Prev</a>
   {% endif %}
+
+  <!-- 2. 頁碼數字清單 -->
+  <div class="page-numbers-list">
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <!-- 目前所在的頁面：粗體，無連結 -->
+        <span class="page-num current"><b>{{ page }}</b></span>
+      {% elsif page == 1 %}
+        <!-- 第一頁：通常路徑比較特殊，建議直接指向基礎路徑 -->
+        <a href="{{ paginator.base_path | relative_url }}" class="page-num">{{ page }}</a>
+      {% else %}
+        <!-- 其他頁面：使用插件提供的路徑規則 -->
+        {% assign page_path = paginator.base_path | append: 'illustrations/page' | append: page | append: '/' %}
+        <a href="{{ page_path | relative_url }}" class="page-num">{{ page }}</a>
+      {% endif %}
+      
+      {% unless forloop.last %} | {% endunless %} <!-- 在數字之間加上分隔線 -->
+    {% endfor %}
+  </div>
+
+  <!-- 3. 下一頁按鈕 -->
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="page-direct">Next →</a>
+  {% endif %}
+</nav>
+{% endif %}
