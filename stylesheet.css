@@ -207,6 +207,7 @@ text-align: center;
   display: flex;
   justify-content: center;
   gap: 12px;
+  margin-top: 40px;
   margin-bottom: 40px;
   flex-wrap: wrap;
 }
@@ -221,7 +222,7 @@ text-align: center;
   text-decoration: none;
   font-size: 13px;
   transition: 0.3s;
-  line-height: 1.8; /* 增加一點行高確保換行時不重疊 */
+  line-height: 2; /* 增加一點行高確保換行時不重疊 */
   margin: 4px 2px;  /* 增加一點外距讓按鈕間有呼吸空間 */
 }
 

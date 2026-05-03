@@ -6,7 +6,7 @@ title:
   ja: "ピンセット"
 date: 2026-05-03
 image: "tweezers"
-category: "food-drinks"
+category: "home-living"
 tags:
   - tweezers
   - pincet

@@ -35,15 +35,12 @@ layout: default
       </a>
     </div>
 
-    <p>Click download to get the original!</p>
 
-
-    
+        
     {% if page.tags %}
     <div class="illustration-tags">
-      <span class="tags-label">Tags:</span>
       {% for tag in page.tags %}
-        <a href="/tags/{{ tag | slugify }}/" class="tag-item">#{{ tag }}</a>
+        <pre>#{{ tag }}</pre>
       {% endfor %}
     </div>
     {% endif %}

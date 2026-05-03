@@ -10,6 +10,7 @@ category: "kitchen-table"
 tags:
   - rice paddle
   - kitchen
+  - cooking
 description:
   en: "Free rice paddle illustration PNG. Available for personal and commercial use. No redistribution."
   zh: "免費飯匙插圖 PNG。可用於個人與商業用途，禁止轉載或再發布。"
