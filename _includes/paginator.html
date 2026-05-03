@@ -7,6 +7,7 @@
     <a href="{{ paginator.previous_page_path | relative_url }}" class="page-direct">← Prev</a>
   {% endif %}
 
+
   <!-- 2. 頁碼數字清單 -->
   <div class="page-numbers-list">
     {% for page in (1..paginator.total_pages) %}
@@ -14,15 +15,17 @@
         <!-- 目前所在的頁面：粗體，無連結 -->
         <span class="page-num current"><b>{{ page }}</b></span>
       {% elsif page == 1 %}
-        <!-- 第一頁：通常路徑比較特殊，建議直接指向基礎路徑 -->
-        <a href="{{ paginator.base_path | relative_url }}" class="page-num">{{ page }}</a>
+        <!-- 第一頁：【修正重點】直接使用插件提供的首頁路徑 -->
+        <a href="{{ paginator.first_page_path | relative_url }}" class="page-num">{{ page }}</a>
       {% else %}
-        <!-- 其他頁面：使用插件提供的路徑規則 -->
-        {% assign page_path = paginator.base_path | append: 'illustrations/page' | append: page | append: '/' %}
-        <a href="{{ page_path | relative_url }}" class="page-num">{{ page }}</a>
+        <!-- 其他頁面：【修正重點】使用更保險的 pagination_info 邏輯 -->
+        {% if forloop.index > 1 %}
+          {% assign page_path = paginator.first_page_path | append: '/page' | append: page | append: '/' | replace: '//', '/' %}
+          <a href="{{ page_path | relative_url }}" class="page-num">{{ page }}</a>
+        {% endif %}
       {% endif %}
       
-      {% unless forloop.last %} | {% endunless %} <!-- 在數字之間加上分隔線 -->
+      {% unless forloop.last %} | {% endunless %}
     {% endfor %}
   </div>
 

@@ -23,17 +23,6 @@ layout: default
       <img src="/assets/images/illustrations/sample/{{ page.image }}-sample.png" alt="{{ page.title.en }} sample - SunnyDraws">
     </div>
 
- <!--
-    {% if page.tags %}
-    <div class="illustration-tags">
-      <span class="tags-label">Tags:</span>
-      {% for tag in page.tags %}
-        <a href="/tags/{{ tag | slugify }}/" class="tag-item">#{{ tag }}</a>
-      {% endfor %}
-    </div>
-    {% endif %}
-  -->
-
     <div>
       <a href="/assets/images/illustrations/download/{{ page.image }}.png" 
         download="{{ page.image }}.png"
@@ -47,6 +36,17 @@ layout: default
     </div>
 
     <p>Click download to get the original!</p>
+
+
+    
+    {% if page.tags %}
+    <div class="illustration-tags">
+      <span class="tags-label">Tags:</span>
+      {% for tag in page.tags %}
+        <a href="/tags/{{ tag | slugify }}/" class="tag-item">#{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
 
  
 
