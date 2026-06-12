@@ -6,21 +6,28 @@
 		
 	</head>
 	<body>
-		<nav class="top-nav">
-			<div class="container">
-				<a href="/index">Home</a>
-				<span>|</span>
-				<a href="/illustrations">Free Illustrations</a>
-				<span>|</span>
-				<a href="/license">License</a>
-				<span>|</span>
-				<a href="/about">About</a>
-    			</div>
-    		</nav>
+		<div class="top-bar-area">
+			
+			
+				{% unless page.url == "/" %}
+    				{% include site_logo.html %}
+  				{% endunless %}				
+	
 
-		{% unless page.url == "/" %}
-    		{% include header.html %}
-  		{% endunless %}
+
+			<nav class="top-nav">
+				<div class="container">
+					<a href="/index">Home</a>
+					<span>|</span>
+					<a href="/illustrations">Free Illustrations</a>
+					<span>|</span>
+					<a href="/license">License</a>
+					<span>|</span>
+					<a href="/about">About</a>
+				</div>
+			</nav>
+		</div>
+
 
 		{{ content }}
 

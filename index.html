@@ -4,19 +4,13 @@ title: Home
 ---
 
 <div class="home-header">
-  <h1>✨Sunny Draws✨</h1>
-
-  <h2 class="subtitle">桑尼宙 🪐</h2>
-  <h2 class="tagline">A visual library of life and fantasy.</h2>
-
+  <img class="home-header-logo" src="assets/images/ui/home_header_logo.png" alt="Sunny Draws home Logo">
+  <h2 class="subtitle">A visual library of life and fantasy.</h2>
 </div>
 
 <main class="main-content container">
-  <h2 class="section-title">Home</h2>
-
-<div class="section-content ">
-  {% assign all_items = site.illustrations %}
-  <p>Now storing <strong>{{ all_items.size }}</strong> pieces of mini art!</p>
-</div>
-
+  <div class="section-content ">
+    {% assign all_items = site.illustrations %}
+    <h2>Now storing <strong>{{ all_items.size }}</strong> pieces of mini art!</h2>
+  </div>
 </main>

@@ -51,10 +51,30 @@ body {
 }
 
 /* --- Nav --- */
+.top-bar-area {
+    display: flex;
+    justify-content: center; /* 讓左右兩邊的內容分散對齊 */
+    align-items: center;         /* 讓左右兩邊的內容垂直置中 */
+    padding: 10px 5%;            /* 上下內襯 15px，左右保留 5% 呼吸空間 */
+    height: 80px;  
+}
+
+.top-logo-area {         
+    height: 80px;                /* 固定 Logo 高度，寬度會自動等比例縮放 */
+    display: block;            /* 左右保留一些空間讓 Logo 不會緊貼邊緣 */
+    margin: 0 60px;  
+}
+
+.top-logo-area img {
+    height: 100%;                /* 讓 Logo 圖片撐滿整個區域高度 */
+    width: auto;                 /* 寬度自動調整保持比例 */
+    display: block;
+}
+
 .top-nav {
-  text-align: right;
-  padding: 20px 0;
   font-size: 16px;
+  margin: 0 60px;
+  text-align: center;
 }
 
 .top-nav a {
@@ -73,29 +93,15 @@ body {
 
 /* --- 2. Header (_includes/header.html) --- */
 
-.site-header{
-text-align: center;
-  padding: 60px 0;
-  border-bottom: 1px solid rgba(249, 241, 220, 0.15);
-}
 
-.logo-area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 10px;
-}
-
-.logo-area h1 {
-  font-size: 32px;
-  margin: 0;
-  letter-spacing: 2px;
-  color: var(--accent-beige);
-}
 
 .home-header{
   text-align: center;
+}
+
+.home-header-logo {  
+  height: auto;
+  margin: 40px 0;
 }
 
 .subtitle {
@@ -104,10 +110,6 @@ text-align: center;
   color: var(--light-purple);
 }
 
-.tagline {
-  font-size: 16px;
-  opacity: 0.8;
-}
 
 /* --- 3. Main Page 排版 --- */
 .main-content {
@@ -117,15 +119,18 @@ text-align: center;
 
 .section-title {
   text-align: center;
-  font-size: 32px;
+  font-size: 40px;
+  padding-bottom: 40px;
   margin-bottom: 40px;
   font-weight: 600;
   color: var(--accent-beige);
 
+
   letter-spacing: 0.04em;
-  -webkit-text-stroke: 5px rgb(30, 30, 30); /* 字體邊框 */
-  -webkit-text-stroke-linejoin: round; /* 讓邊角變圓潤 */
-  paint-order: stroke fill; /* 確保邊框在填充顏色下方(繪製順序) */
+    /* 文字描邊效果 */
+  /*-webkit-text-stroke: 6px rgb(30, 30, 30); /* 字體邊框 */
+  /*-webkit-text-stroke-linejoin: round; /* 讓邊角變圓潤 */
+  /*paint-order: stroke fill; /* 確保邊框在填充顏色下方(繪製順序) */
 }
 
 .section-content {
@@ -191,7 +196,7 @@ text-align: center;
   width: 100%;
   max-width: 480px;
   margin-top: 40px;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   overflow: hidden;
 }
 
@@ -373,6 +378,11 @@ text-align: center;
 
 /* 響應式調整 */
 @media (max-width: 767px) {
+  .home-header-logo {
+    width: 100%;  
+    margin: 30px 0;
+  }
+
   .illustration-grid { grid-template-columns: repeat(1, 1fr); /* 👈 改為一欄 */
     width: 84%; 
     margin: 0 auto;

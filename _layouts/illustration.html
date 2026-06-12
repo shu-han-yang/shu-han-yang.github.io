@@ -3,21 +3,11 @@ layout: default
 ---
 <main class="main-content container illustration-detail-page">
 
-  <nav class="breadcrumb-nav"> 
-    <a href="/illustrations/" class="breadcrumb-item link">All</a>
-    <span class="separator">&gt;</span>
-    
-    <a href="/illustrations/{{ page.category | slugify }}/" class="breadcrumb-item link">
-      {{ site.data.categories[page.category].en }}
-    </a>
-    <span class="separator">&gt;</span>
-    
-    <div class="breadcrumb-item current">{{ page.title.en }}</div>
-  </nav>
-
   <article>
     
     <h1 class="section-title">{{ page.title.en }}!</h1>
+
+    
 
     <div class="illustration-image-wrapper">
       <img src="/assets/images/illustrations/sample/{{ page.image }}-sample.png" alt="{{ page.title.en }} sample - SunnyDraws">
@@ -45,7 +35,17 @@ layout: default
     </div>
     {% endif %}
 
- 
+   <nav class="breadcrumb-nav"> 
+    <a href="/illustrations/" class="breadcrumb-item link">All</a>
+    <span class="separator">&gt;</span>
+    
+    <a href="/illustrations/{{ page.category | slugify }}/" class="breadcrumb-item link">
+      {{ site.data.categories[page.category].en }}
+    </a>
+    <span class="separator">&gt;</span>
+    
+    <div class="breadcrumb-item current">{{ page.title.en }}</div>
+  </nav>
 
     <div class="license-info-box">
       <h3>You can:</h3>
@@ -58,5 +58,7 @@ layout: default
     </div>
     
   </article>
+
+  
 
 </main>
