@@ -41,7 +41,7 @@ body {
   text-decoration: none;
   font-size: 16px;
   border: 1.5px solid var(--accent-beige);
-  padding: 12px 35px;
+  padding: 6px 24px;
   border-radius: 30px;
   transition: 0.3s;
   box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
@@ -292,6 +292,34 @@ body {
   margin-right: 2px; 
   font-size: 1.3em;  /* 讓圖示稍微大一點點 */
   padding-right: 2px;
+}
+
+/* --- About --- */
+.article-box{
+  color: var(--accent-beige);
+  display: block;
+  border-radius: 30px;
+  border: var(--accent-beige) 2px solid;
+  padding: 45px;
+  margin: 40px 18px 40px 18px;
+}
+
+.article-box h2{
+  margin-top: 0;
+}
+
+.article-box h3{
+  margin-top: 36px;
+}
+
+.article-box p{
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.article-box a{
+  text-decoration: none;
+  color: orange;
 }
 
 
