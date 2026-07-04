@@ -32,6 +32,17 @@
 		{{ content }}
 
 		{% include footer.html %}
+
+
+		<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+		<script>
+		  kofiWidgetOverlay.draw('supportsunny', {
+		    'type': 'floating-chat',
+		    'floating-chat.donateButton.text': 'Support Me',
+		    'floating-chat.donateButton.background-color': '#ff38b8',
+		    'floating-chat.donateButton.text-color': '#fff'
+		  });
+		</script>
 		
 	</body>
 </html>
