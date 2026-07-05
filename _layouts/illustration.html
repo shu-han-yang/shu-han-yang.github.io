@@ -7,7 +7,14 @@ layout: default
     
     <h1 class="section-title">{{ page.title.en }}!</h1>
 
-    
+   {% if page.tags %}
+    <div class="illustration-tags">
+      {% for tag in page.tags %}
+        <pre>#{{ tag }}</pre>
+      {% endfor %}
+    </div>
+    {% endif %}
+
 
     <div class="illustration-image-wrapper">
       <img src="/assets/images/illustrations/sample/{{ page.image }}-sample.png" alt="{{ page.title.en }} sample - SunnyDraws">
@@ -24,28 +31,7 @@ layout: default
         Download
       </a>
     </div>
-
-
         
-    {% if page.tags %}
-    <div class="illustration-tags">
-      {% for tag in page.tags %}
-        <pre>#{{ tag }}</pre>
-      {% endfor %}
-    </div>
-    {% endif %}
-
-   <nav class="breadcrumb-nav"> 
-    <a href="/illustrations/" class="breadcrumb-item link">All</a>
-    <span class="separator">&gt;</span>
-    
-    <a href="/illustrations/{{ page.category | slugify }}/" class="breadcrumb-item link">
-      {{ site.data.categories[page.category].en }}
-    </a>
-    <span class="separator">&gt;</span>
-    
-    <div class="breadcrumb-item current">{{ page.title.en }}</div>
-  </nav>
 
     <div class="license-info-box">
       <h3>You can:</h3>
@@ -57,6 +43,17 @@ layout: default
       <p class="license-agreement">By clicking download, you agree with our <a href="/license">license</a><span class="icon">✨</span></p>
     </div>
 
+    <nav class="breadcrumb-nav"> 
+      <a href="/illustrations/" class="breadcrumb-item link">All</a>
+      <span class="separator">&gt;</span>
+      
+      <a href="/illustrations/{{ page.category | slugify }}/" class="breadcrumb-item link">
+        {{ site.data.categories[page.category].en }}
+      </a>
+      <span class="separator">&gt;</span>
+      
+      <div class="breadcrumb-item current">{{ page.title.en }}</div>
+   </nav>
 
   </article>
 

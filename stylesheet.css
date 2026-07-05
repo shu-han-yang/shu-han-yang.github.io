@@ -174,7 +174,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 40px;
+  margin-top: 60px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
@@ -183,7 +184,7 @@ body {
   color: var(--text-dark);
   padding: 6px 20px;
   border-radius: 25px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   text-decoration: none;
 }
@@ -212,8 +213,8 @@ body {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   flex-wrap: wrap;
 }
 
@@ -465,4 +466,59 @@ body {
 
 .page-num.current:hover {
   text-decoration: none;
+}
+
+
+
+/* Gallery */
+
+/* 外層容器：滿寬、隱藏溢出部分 */
+.gallery-wrapper {
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 20px 0;
+}
+
+/* 滾動軌道：使用 flex 讓圖片排成一橫列 */
+.gallery-track {
+  display: inline-flex;
+  gap: 15px; /* 圖片之間的間距 */
+  animation: marquee 30s linear infinite; /* 30秒循環一次，線性速度 */
+}
+
+/* 當滑鼠懸停時暫停滾動，方便使用者點擊 */
+.gallery-track:hover {
+  animation-play-state: paused;
+}
+
+/* 圖片包裝連結 */
+.gallery-item {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* 圖片本體樣式 */
+.gallery-item img {
+  height: 250px; /* 固定高度，寬度隨比例自適應 */
+  width: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* 懸停時稍微放大，增加互動感 */
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* 跑馬燈的核心動畫 */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* 滾動到總長度的一半時重置 */
+  }
 }

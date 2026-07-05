@@ -1,0 +1,24 @@
+<div class="gallery-wrapper">
+  <div class="gallery-track" id="galleryTrack">
+    
+    {% comment %}
+      將 collection 陣列丟入 sample 篩選器，直接隨機抽選 20 個物件
+    {% endcomment %}
+    {% assign random_illustrations = site.illustrations | sample: 20 %}
+
+    {% comment %} 第一組 20 張圖 {% endcomment %}
+    {% for item in random_illustrations %}
+      <a href="{{ item.url | relative_url }}" class="gallery-item" title="{{ item.title.en }}">
+        <img src="/assets/images/illustrations/thumbnail/{{ item.image }}-thumbnail.png" alt="{{ item.title.en }} thumbnail - SunnyDraws">
+      </a>
+    {% endfor %}
+
+    {% comment %} 第二組 20 張圖（複製一份以達成無縫滾動） {% endcomment %}
+    {% for item in random_illustrations %}
+      <a href="{{ item.url | relative_url }}" class="gallery-item" title="{{ item.title.en }}">
+        <img src="/assets/images/illustrations/thumbnail/{{ item.image }}-thumbnail.png" alt="{{ item.title.en }} thumbnail - SunnyDraws">
+      </a>
+    {% endfor %}
+
+  </div>
+</div>
