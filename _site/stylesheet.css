@@ -292,6 +292,55 @@ h1, h2, h3, .basic-button {
   border-radius: 40px;
 }
 
+/* 遮罩層：蓋住整個螢幕，背景半透明黑 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明黑背景 */
+  
+  /* 運用 Flexbox 讓內部的小視窗絕對置中 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* 預設隱藏（關鍵） */
+  display: none; 
+  z-index: 9999; /* 確保浮在最上層 */
+}
+
+/* 贊助小視窗本體 */
+.modal-content {
+  background-color: #5e5959;
+  padding: 30px;
+  border-radius: 16px;
+  width: 400px;
+  max-width: 90%; /* 手機版不爆開 */
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sponsor-box {
+  padding: 15px;
+  margin: 20px 0;
+}
+
+/* 關閉按鈕樣式 */
+.close-btn {
+  background-color: #333;
+  color: var(--accent-beige);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.close-btn:hover {
+  background-color: #555;
+}
+
+
 /* --- License --- */
 
 .license-info-box {
@@ -374,7 +423,7 @@ h1, h2, h3, .basic-button {
   margin-top: 60px;
 }
 
-.cooyright-info {
+.copyright-info {
   color: var(--light-purple);
   font-size: 14px;
   margin-top: 30px;
@@ -566,10 +615,24 @@ h1, h2, h3, .basic-button {
   }
 }
 
+@media (max-width: 767px) {
+  .gallery-item img { height: 180px;}
+  .gallery-track {
+    gap: 13px; /* 手機版縮小間距 */
+  }
+}
+
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+}
+
+
 
 
 /* ==========================
-   手機版側邊推擠選單 CSS
+   手機版側邊推擠選單 CSSs
    ========================== */
 
 /* 確保網頁水平方向不會出現滾動條 */

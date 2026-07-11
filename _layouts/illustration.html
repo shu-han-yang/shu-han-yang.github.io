@@ -32,13 +32,26 @@ layout: default
     <div class="illustration-download-btn-wrapper">
       <a href="/assets/images/illustrations/download/{{ page.image }}.png" 
         download="{{ page.image }}.png"
-        class="basic-button download-btn" 
+        class="basic-button download-btn" id="download-btn"
         onclick="gtag('event', 'file_download', {
             'file_name': '{{ page.title.en | escape }}',
             'file_extension': 'png' 
         });">
         Download
       </a>
+
+      <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+          <h3>Thank you for downloading!</h3>
+          <p>Feel free to support my continued creation. 😚</p>
+          
+          <div class="sponsor-box">
+            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support SunnyDraws', '#f060e6', 'K7B222KJ4K');kofiwidget2.draw();</script> 
+          </div>
+          
+          <button id="close-btn" class="close-btn">Close</button>
+      </div>
+      
     </div>
         
 
@@ -66,7 +79,33 @@ layout: default
 
 
   </article>
-
   
 
 </main>
+
+
+<script>
+  const downloadBtn = document.getElementById('download-btn');
+  const modalOverlay = document.getElementById('modal-overlay');
+  const closeBtn = document.getElementById('close-btn');
+
+  // 1. 點擊下載按鈕
+  downloadBtn.addEventListener('click', () => {
+
+    // 【同時彈出小視窗】
+    // 將預設的 none 改為 flex，使其依照 CSS 設定在畫面中央浮現
+    modalOverlay.style.display = 'flex'; 
+  });
+
+  // 2. 點擊關閉按鈕
+  closeBtn.addEventListener('click', () => {
+    modalOverlay.style.display = 'none'; // 隱藏視窗
+  });
+
+  // 3. 進階優化：點擊小視窗外圍的「半透明黑背景」也能關閉
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+      modalOverlay.style.display = 'none';
+    }
+  });
+</script>
