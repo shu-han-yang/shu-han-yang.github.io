@@ -11,6 +11,7 @@
   --overlay-gradient: linear-gradient(180deg, rgba(109, 93, 148, 0) 30%, rgba(74, 63, 107, 0.7) 100%);
 }
 
+
 /* --- 1. 基礎佈局與置中 --- */
 body {
   /*font-family: 'SF Pro Display', 'PingFang TC', 'Heiti TC', sans-serif;*/
@@ -24,6 +25,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  overflow-x: hidden; /* 防止手機版側邊選單出現水平滾動條 */
 }
 
 /* 只有標題：才套用圓角無襯線 */
@@ -176,9 +179,56 @@ h1, h2, h3, .basic-button {
 /* --- 4. Illustration 獨立頁面佈局 --- */
 .illustration-detail-page {
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  display: flex; /* 開啟彈性盒佈局 */
+  flex-direction: column; /* 讓子元素垂直排列 */
   align-items: center;
+  width: 100%;
+}
+
+.illustration-image-wrapper {
+  margin-top: 40px;
+  margin-bottom: 100px;
+  overflow: hidden;
+}
+
+.illustration-image-wrapper img {
+  max-width: 480px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.illustration-tags-wrapper {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  margin: 50px auto 30px auto;
+}
+
+.illustration-tags {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  line-height: 0.1;
+  flex-wrap: wrap;
+  font-family: monospace;
+  font-size: 14px;
+  color: var(--accent-beige);
+}
+
+.illustration-description-wrapper {
+  display: flex;
+  margin: 0 auto 10px auto;
+  text-align: center;
+  font-family: monospace;
+  line-height: 2;
+  width: 600px;
+  color: var(--text-dark);
+}
+
+.illustration-download-btn-wrapper {
+  margin: 40px auto 20px auto;
+  text-align: center;
 }
 
 .breadcrumb-nav {
@@ -207,30 +257,9 @@ h1, h2, h3, .basic-button {
   color: var(--accent-beige);
 }
 
-.illustration-image-wrapper {
-  width: 100%;
-  max-width: 480px;
-  margin-top: 40px;
-  margin-bottom: 100px;
-  overflow: hidden;
-}
 
-.illustration-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
-.illustration-tags {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  flex-wrap: wrap;
-}
-
-.tag-item {
+.category-item {
   display: inline-block;
   background-color: rgba(249, 241, 220, 0.1);
   color: var(--accent-beige);
@@ -244,18 +273,17 @@ h1, h2, h3, .basic-button {
   margin: 4px 2px;  /* 增加一點外距讓按鈕間有呼吸空間 */
 }
 
-/* 👈 選中狀態 (Active)：背景變實心，文字變深色 */
-.tag-item.active {
+.category-item.active {
   background-color: var(--accent-beige);
   color: var(--text-dark); /* 使用你變數中的深紫色 */
   font-weight: 700;
 }
 
-.tag-item:hover {
+.category-item:hover {
   background-color: rgba(249, 241, 220, 0.3);
 }
 
-/* --- 5. 按鈕與 License --- */
+/* --- 按鈕 --- */
 .download-btn {
   font-size: 20px;
   font-weight: 700;
@@ -264,11 +292,13 @@ h1, h2, h3, .basic-button {
   border-radius: 40px;
 }
 
+/* --- License --- */
+
 .license-info-box {
   box-sizing: border-box; /* 確保寬度計算包含 Padding */
-  max-width: 600px;
+  max-width: 560px;
   width: 100%;
-  margin: 60px auto 0;    /* 左右 auto 確保置中 */
+  margin: 80px auto 80px auto;    /* 左右 auto 確保置中 */
   padding: 35px;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 20px;
@@ -278,28 +308,15 @@ h1, h2, h3, .basic-button {
 .license-info-box h3 { 
   color: var(--accent-beige); 
   margin-top: 0;
+  font-size: 16px;
  }
 
 
-.license-info-box ul {
-  list-style: none;       /* 拿掉圓點 */
-  padding-left: 20px ;             /* 歸零縮排 */
-}
-
-.license-info-box li {
-  margin-bottom: 10px;  /* 讓每個清單項目之間有一點呼吸空間 */
-  display: flex;        /* 讓打勾符號跟文字對齊更漂亮 */
-  align-items: center;
-  gap: 6px;
-}
-
 .license-agreement {
-  border-top: 2px solid rgba(255, 255, 255, 0.1);
-  margin-top: 32px;
-  margin-bottom: 0px;
-  padding-top: 16px;
-  display: flex;
-  text-align: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  margin-top: 0px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
   gap: 6px;
 }
 
@@ -354,7 +371,7 @@ h1, h2, h3, .basic-button {
   text-align: center;
   padding: 50px 0;
   border-top: 2px solid rgba(249, 241, 220, 0.1);
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 .cooyright-info {
@@ -445,10 +462,10 @@ h1, h2, h3, .basic-button {
     margin: 0 auto;
     gap: 25px;}
   .category-grid { grid-template-columns: repeat(1, 1fr); }
-  .illustration-title { font-size: 28px; }
-  .download-btn { width: 90%; padding: 16px 0; text-align: center; }
+  .download-btn { width: 90vw; padding: 16px 0; text-align: center; }
+  .illustration-tags-wrapper { width: 90vw; }
+  .illustration-description-wrapper { width: 90vw; }
 }
-
 
 
 /* Paginator */
@@ -546,5 +563,128 @@ h1, h2, h3, .basic-button {
   }
   100% {
     transform: translateX(-50%); /* 滾動到總長度的一半時重置 */
+  }
+}
+
+
+
+/* ==========================
+   手機版側邊推擠選單 CSS
+   ========================== */
+
+/* 確保網頁水平方向不會出現滾動條 */
+html{
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1. 漢堡按鈕樣式 (僅在手機版顯示) */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000; /* 確保在最上層 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #333; /* 三條線的顏色 */
+  transition: all 0.3s ease;
+}
+
+/* 2. 側邊選單基礎樣式 */
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px; /* 選單寬度 */
+  height: 100%;
+  background-color: #222; /* 選單背景色 */
+  z-index: 999;
+  transform: translateX(-100%); /* 預設完全藏在左側螢幕外 */
+  transition: transform 0.3s ease-in-out;
+  padding-top: 60px; /* 留空間給漢堡按鈕 */
+}
+
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu ul li a {
+  display: block;
+  padding: 15px 25px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.sidebar-menu ul li a:hover {
+  background-color: #333;
+}
+
+/* 3. 主內容包裝層的位移準備 */
+.content-wrapper {
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+}
+
+/* ==========================================================================
+   點擊後觸發的推擠狀態 (由 JS 切換 body 的 class)
+   ========================================================================== */
+
+/* 選單滑入 */
+body.menu-open .sidebar-menu {
+  transform: translateX(0);
+}
+
+/* 主內容向右推擠 250px (等於選單寬度) */
+body.menu-open .content-wrapper {
+  transform: translateX(250px);
+}
+
+/* (選配) 漢堡按鈕變成 X */
+body.menu-open .menu-toggle span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+body.menu-open .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+body.menu-open .menu-toggle span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   媒體查詢 (RWD 斷點設定)
+   ========================================================================== */
+
+/* 桌機版：隱藏漢堡與側邊選單，顯示原本的導覽列 */
+@media (min-width: 769px) {
+  .menu-toggle, .sidebar-menu {
+    display: none;
+  }
+  body.menu-open .content-wrapper {
+    transform: none; /* 防止桌機版誤動 */
+  }
+}
+
+/* 手機版：隱藏你原本的桌機版導覽列 */
+@media (max-width: 769px) {
+  .top-nav {
+    display: none; 
   }
 }

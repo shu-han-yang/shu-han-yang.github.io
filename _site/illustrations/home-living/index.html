@@ -38,7 +38,6 @@
   								
 	
 
-
 			<nav class="top-nav">
 				<div class="container">
 					<a href="/index">Home</a>
@@ -52,6 +51,54 @@
 			</nav>
 		</div>
 
+		
+
+<button class="menu-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<nav class="sidebar-menu">
+  <ul>
+    <li><a href="/index">Home</a></li>
+    <li><a href="/illustrations">Free Illustrations</a></li>
+    <li><a href="/license">License</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</nav>
+
+
+</div>
+
+
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const body = document.body;
+    const contentWrapper = document.querySelector('.content-wrapper');
+
+    // 點擊漢堡按鈕切換選單
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      body.classList.toggle('menu-open');
+    });
+
+    // 點擊主內容區域時，自動收起選單
+    if (contentWrapper) {
+      contentWrapper.addEventListener('click', function() {
+        if (body.classList.contains('menu-open')) {
+          body.classList.remove('menu-open');
+        }
+      });
+    }
+  });
+</script>
+
 
 		<main class="main-content container">
   <h1 class="section-title">
@@ -59,56 +106,56 @@
   </h1>
 
   <nav class="category-filters" style="text-align: center; margin-bottom: 40px;">
-  <a href="/illustrations/" class="tag-item ">
+  <a href="/illustrations/" class="category-item ">
     All
   </a>
 
   
     
     <a href="/illustrations/food-drinks/" 
-       class="tag-item ">
+       class="category-item ">
       Food & Drinks
     </a>
   
     
     <a href="/illustrations/home-living/" 
-       class="tag-item active">
+       class="category-item active">
       Home & Living
     </a>
   
     
     <a href="/illustrations/kitchen-table/" 
-       class="tag-item ">
+       class="category-item ">
       Kitchen & Table
     </a>
   
     
     <a href="/illustrations/fashion-wear/" 
-       class="tag-item ">
+       class="category-item ">
       Fashion & Wear
     </a>
   
     
     <a href="/illustrations/nature-animals/" 
-       class="tag-item ">
+       class="category-item ">
       Nature & Animals
     </a>
   
     
     <a href="/illustrations/travel-movement/" 
-       class="tag-item ">
+       class="category-item ">
       Travel & Movement
     </a>
   
     
     <a href="/illustrations/lifestyle-mood/" 
-       class="tag-item ">
+       class="category-item ">
       Lifestyle & Mood
     </a>
   
     
     <a href="/illustrations/characters-stories/" 
-       class="tag-item ">
+       class="category-item ">
       Characters & Stories
     </a>
   
@@ -1006,6 +1053,8 @@ autopage: {&quot;layout_path&quot;=&gt;&quot;_layouts/illustration-category.html
 
   <p class="cooyright-info">&copy; 2026 SunnyDraws. All Rights Reserved.</p>
 </footer>
+
+
 
 
 		<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>

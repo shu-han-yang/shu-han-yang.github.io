@@ -7,20 +7,29 @@ layout: default
     
     <h1 class="section-title">{{ page.title.en }}!</h1>
 
-   {% if page.tags %}
-    <div class="illustration-tags">
-      {% for tag in page.tags %}
-        <pre>#{{ tag }}</pre>
-      {% endfor %}
-    </div>
-    {% endif %}
-
 
     <div class="illustration-image-wrapper">
       <img src="/assets/images/illustrations/sample/{{ page.image }}-sample.png" alt="{{ page.title.en }} sample - SunnyDraws">
     </div>
 
-    <div>
+
+    <div class="illustration-tags-wrapper">
+      {% if page.tags %}
+        <div class="illustration-tags">
+          {% for tag in page.tags %}
+            <p>#{{ tag }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+
+
+    <div class="illustration-description-wrapper">
+      <p>{{ page.description.en }}</p>
+    </div>
+
+    <div class="illustration-download-btn-wrapper">
       <a href="/assets/images/illustrations/download/{{ page.image }}.png" 
         download="{{ page.image }}.png"
         class="basic-button download-btn" 
@@ -34,14 +43,14 @@ layout: default
         
 
     <div class="license-info-box">
+      <h3 class="license-agreement">By clicking download, you agree with our <a href="/license">license</a><span class="icon">✨</span></h3>
       <h3>You can:</h3>
-      <ul>
-        <li><span class="icon">👍</span>Use for personal or commercial projects.</li>
-        <li><span class="icon">✌️</span>  Modify the illustration as needed.</li>
-        <li><span class="icon">☺️</span>  No attribution required (but appreciated!).</li>
-      </ul>
-      <p class="license-agreement">By clicking download, you agree with our <a href="/license">license</a><span class="icon">✨</span></p>
+      <p><span class="icon">👍</span>Use for personal or commercial projects.</p>
+      <p><span class="icon">✌️</span>  Modify the illustration as needed.</p>
+      <p><span class="icon">☺️</span>  No attribution required (but appreciated!).</p>
     </div>
+
+
 
     <nav class="breadcrumb-nav"> 
       <a href="/illustrations/" class="breadcrumb-item link">All</a>
@@ -54,6 +63,7 @@ layout: default
       
       <div class="breadcrumb-item current">{{ page.title.en }}</div>
    </nav>
+
 
   </article>
 

@@ -40,7 +40,6 @@
   								
 	
 
-
 			<nav class="top-nav">
 				<div class="container">
 					<a href="/index">Home</a>
@@ -54,6 +53,54 @@
 			</nav>
 		</div>
 
+		
+
+<button class="menu-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<nav class="sidebar-menu">
+  <ul>
+    <li><a href="/index">Home</a></li>
+    <li><a href="/illustrations">Free Illustrations</a></li>
+    <li><a href="/license">License</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</nav>
+
+
+</div>
+
+
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const body = document.body;
+    const contentWrapper = document.querySelector('.content-wrapper');
+
+    // 點擊漢堡按鈕切換選單
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      body.classList.toggle('menu-open');
+    });
+
+    // 點擊主內容區域時，自動收起選單
+    if (contentWrapper) {
+      contentWrapper.addEventListener('click', function() {
+        if (body.classList.contains('menu-open')) {
+          body.classList.remove('menu-open');
+        }
+      });
+    }
+  });
+</script>
+
 
 		<main class="main-content container illustration-detail-page">
 
@@ -61,28 +108,37 @@
     
     <h1 class="section-title">Scented Candle!</h1>
 
-   
-    <div class="illustration-tags">
-      
-        <pre>#candle</pre>
-      
-        <pre>#scented</pre>
-      
-        <pre>#aroma</pre>
-      
-        <pre>#healing</pre>
-      
-        <pre>#relax</pre>
-      
-    </div>
-    
-
 
     <div class="illustration-image-wrapper">
       <img src="/assets/images/illustrations/sample/scented-candle-sample.png" alt="Scented Candle sample - SunnyDraws">
     </div>
 
-    <div>
+
+    <div class="illustration-tags-wrapper">
+      
+        <div class="illustration-tags">
+          
+            <p>#candle</p>
+          
+            <p>#scented</p>
+          
+            <p>#aroma</p>
+          
+            <p>#healing</p>
+          
+            <p>#relax</p>
+          
+        </div>
+        
+    </div>
+
+
+
+    <div class="illustration-description-wrapper">
+      <p>Free scented candle illustration PNG. Available for personal and commercial use. No redistribution.</p>
+    </div>
+
+    <div class="illustration-download-btn-wrapper">
       <a href="/assets/images/illustrations/download/scented-candle.png" 
         download="scented-candle.png"
         class="basic-button download-btn" 
@@ -96,14 +152,14 @@
         
 
     <div class="license-info-box">
+      <h3 class="license-agreement">By clicking download, you agree with our <a href="/license">license</a><span class="icon">✨</span></h3>
       <h3>You can:</h3>
-      <ul>
-        <li><span class="icon">👍</span>Use for personal or commercial projects.</li>
-        <li><span class="icon">✌️</span>  Modify the illustration as needed.</li>
-        <li><span class="icon">☺️</span>  No attribution required (but appreciated!).</li>
-      </ul>
-      <p class="license-agreement">By clicking download, you agree with our <a href="/license">license</a><span class="icon">✨</span></p>
+      <p><span class="icon">👍</span>Use for personal or commercial projects.</p>
+      <p><span class="icon">✌️</span>  Modify the illustration as needed.</p>
+      <p><span class="icon">☺️</span>  No attribution required (but appreciated!).</p>
     </div>
+
+
 
     <nav class="breadcrumb-nav"> 
       <a href="/illustrations/" class="breadcrumb-item link">All</a>
@@ -117,6 +173,7 @@
       <div class="breadcrumb-item current">Scented Candle</div>
    </nav>
 
+
   </article>
 
   
@@ -128,6 +185,8 @@
 
   <p class="cooyright-info">&copy; 2026 SunnyDraws. All Rights Reserved.</p>
 </footer>
+
+
 
 
 		<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
