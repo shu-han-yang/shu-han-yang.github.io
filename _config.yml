@@ -4,6 +4,7 @@ site_tagline: Free illustration PNG download
 
 plugins:
   - jekyll-paginate-v2
+  - jekyll-sitemap
 
 collections:
   illustrations:

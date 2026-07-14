@@ -7,4 +7,5 @@ gem "jekyll"
 # 加入分頁插件
 group :jekyll_plugins do
   gem "jekyll-paginate-v2", "~> 3.0"
+  gem "jekyll-sitemap"
 end
