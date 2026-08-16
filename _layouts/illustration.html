@@ -6,6 +6,7 @@ layout: default
   <article>
     
     <h1 class="section-title">{{ page.title.en }}!</h1>
+    <h2 class="section-lang-subtitle">{{ page.title.zh }} / {{ page.title.ja }}</h2>
 
 
     <div class="illustration-image-wrapper">
@@ -23,11 +24,6 @@ layout: default
         {% endif %}
     </div>
 
-
-
-    <div class="illustration-description-wrapper">
-      <p>{{ page.description.en }}</p>
-    </div>
 
     <div class="illustration-download-btn-wrapper">
       <a href="/assets/images/illustrations/download/{{ page.image }}.png" 
@@ -63,6 +59,10 @@ layout: default
       <p><span class="icon">☺️</span>  No attribution required (but appreciated!).</p>
     </div>
 
+
+    <div class="illustration-description-wrapper">
+      <p>{{ page.description.en }}</p>
+    </div>
 
 
     <nav class="breadcrumb-nav"> 

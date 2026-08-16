@@ -134,12 +134,32 @@ h1, h2, h3, .basic-button {
   margin-bottom: 40px;
   font-weight: 600;
   color: var(--accent-beige);
+  
 
   letter-spacing: 0.04em;
     /* 文字描邊效果 */
   /*-webkit-text-stroke: 6px rgb(30, 30, 30); /* 字體邊框 */
   /*-webkit-text-stroke-linejoin: round; /* 讓邊角變圓潤 */
   /*paint-order: stroke fill; /* 確保邊框在填充顏色下方(繪製順序) */
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 40px;
+  font-weight: 400;
+  color: var(--light-purple);
+  letter-spacing: 0.04em;
+}
+
+.section-lang-subtitle {
+  text-align: center;
+  font-size: 16px;
+  margin-top: -50px;
+  margin-bottom: 70px;
+  font-weight: 400;
+  color: var(--light-purple);
+  letter-spacing: 0.04em;
 }
 
 .section-content {
@@ -220,7 +240,7 @@ h1, h2, h3, .basic-button {
 
 .illustration-description-wrapper {
   display: flex;
-  margin: 0 auto 10px auto;
+  margin: 0px auto 0px auto;
   text-align: center;
   font-family: monospace;
   line-height: 2;
