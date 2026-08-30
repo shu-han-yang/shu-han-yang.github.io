@@ -78,8 +78,41 @@ layout: default
    </nav>
 
 
+  <!-- 瀏覽器上一頁 -->
+<a href="javascript:history.back()">← Back</a>
+
+
+   
+<section class="related-works">
+  <h3>Related Works</h3>
+  <div class="related-grid" id="relatedGrid">
+    {% for item in site.illustrations %}
+      {% if item.url != page.url %}
+        {% assign is_related = false %}
+        {% for tag in item.tags %}
+          {% if page.tags contains tag %}
+            {% assign is_related = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        {% if is_related %}
+          <div class="related-card" style="display: none;">
+            <a href="{{ item.url | relative_url }}">
+              {% if item.image %}
+                <img src="/assets/images/illustrations/thumbnail/{{ item.image }}-thumbnail.png" alt="{{ item.title.en }}">
+              {% endif %}
+              <h4>{{ item.title.en }}</h4>
+            </a>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
   </article>
-  
+
 
 </main>
 
@@ -107,5 +140,20 @@ layout: default
     if (e.target === modalOverlay) {
       modalOverlay.style.display = 'none';
     }
+  });
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = Array.from(document.querySelectorAll("#relatedGrid .related-card"));
+    
+    // 隨機打亂所有符合的卡片
+    cards.sort(() => Math.random() - 0.5);
+    
+    // 只顯示前 3 個
+    cards.slice(0, 3).forEach(card => {
+      card.style.display = "block";
+    });
   });
 </script>

@@ -153,7 +153,7 @@ h1, h2, h3, .basic-button {
 .section-lang-subtitle {
   text-align: center;
   font-size: 16px;
-  margin-top: -50px;
+  margin-top: -40px;
   margin-bottom: 70px;
   font-weight: 400;
   color: var(--light-purple);
@@ -257,7 +257,7 @@ h1, h2, h3, .basic-button {
   justify-content: center;
   gap: 10px;
   margin-top: 60px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   flex-wrap: wrap;
 }
 
@@ -359,6 +359,81 @@ h1, h2, h3, .basic-button {
 .close-btn:hover {
   background-color: #555;
 }
+/* ----Related Works 區塊外層容器 ----*/
+/* 1. Related Works 區塊外層容器 */
+.related-works {
+  width: 100%;
+  margin-top: 100px;             /* 與上方主內容拉開距離 */
+  padding-top: 40px;            /* 頂部內邊距 */
+  border-top: 1px solid var(--text-dark); /* 淺淺的分隔線  */
+  box-sizing: border-box;
+}
+
+.related-works h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--light-purple);
+}
+
+/* 2. 三欄排版容器 (使用 CSS Grid 平均分配 3 等分) */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 寬度嚴格 3 等分 */
+  gap: 20px;                             /* 卡片之間的間距 */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 3. 單一圖卡與超連結樣式 */
+.related-card {
+  width: 100%;
+}
+
+.related-card a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.related-card a:hover {
+  transform: translateY(-4px); /* 滑鼠懸停時微浮起效果 */
+  opacity: 0.9;
+}
+
+/* 4. 圖片設定 (防止圖片比例變形並填滿卡片寬度) */
+.related-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;          /* 固定圖片長寬比 (可改為 1/1 正方形或 16/9) */
+  object-fit: cover;            /* 自動裁切填滿，不變形 */
+  border-radius: 8px;           /* 圖片圓角 (可依喜好保留或拿掉) */
+  display: block;
+  background-color: var(--text-dark);    /* 圖片載入前的淺灰底色 */
+}
+
+/* 5. 卡片標題文字 */
+.related-card h4 {
+  font-size: 0.95rem;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.4;
+  /* 若標題太長，單行截斷加省略號 (選用) */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 6. 手機版響應式 (螢幕寬度小於 768px 時改為單欄或兩欄，避免 3 張擠在一起太小) */
+@media (max-width: 768px) {
+  .related-grid {
+    grid-template-columns: 1fr; /* 手機上直向排列 (若想兩欄可改為 repeat(2, 1fr)) */
+    gap: 16px;
+  }
+}
+
 
 
 /* --- License --- */
