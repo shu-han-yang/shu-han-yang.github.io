@@ -518,11 +518,19 @@ h1, h2, h3, .basic-button {
   margin-top: 60px;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
 .copyright-info {
   color: var(--light-purple);
   font-size: 14px;
   margin-top: 30px;
 }
+
 
 
 
