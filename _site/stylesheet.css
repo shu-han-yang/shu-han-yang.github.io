@@ -40,7 +40,9 @@ h1, h2, h3, .basic-button {
   padding: 0 20px;
   width: 100%;
   box-sizing: border-box;
+  text-align: center;
 }
+
 
 
 .basic-button {
@@ -54,6 +56,13 @@ h1, h2, h3, .basic-button {
   transition: 0.3s;
   box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
 }
+
+.basic-button:hover {
+  background-color: var(--accent-beige);
+  color: var(--primary-purple);
+}
+
+
 
 .basic-button:hover {
   background-color: var(--accent-beige);
