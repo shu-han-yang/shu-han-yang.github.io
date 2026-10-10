@@ -161,11 +161,19 @@ h1, h2, h3, .basic-button {
   letter-spacing: 0.04em;
 }
 
+.lang-subtitle-container {
+  display: flex;
+  flex-direction: column; /* 讓兩個語言標題垂直排列 */
+  gap: 0px; /* 調整兩個語言標題之間的間距 */
+  justify-content: center;
+  margin-top: -40px; /* 調整與上方標題的距離 */
+  margin-bottom: 100px; /* 調整與下方內容的距離 */
+}
+
 .section-lang-subtitle {
   text-align: center;
+  line-height: 0.5;
   font-size: 16px;
-  margin-top: -40px;
-  margin-bottom: 70px;
   font-weight: 400;
   color: var(--light-purple);
   letter-spacing: 0.04em;
