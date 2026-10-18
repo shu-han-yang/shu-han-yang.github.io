@@ -6,7 +6,7 @@ title:
   ja: "荷物"
 date: 2026-04-12
 image: "package"
-category: "lifestyle-mood"
+category: "home-living"
 tags:
   - package
   - box
