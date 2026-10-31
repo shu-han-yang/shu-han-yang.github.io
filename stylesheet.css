@@ -181,7 +181,7 @@ h1, h2, h3, .basic-button {
 
 .section-content {
   margin: 0 auto;
-  max-width: 670px;
+  max-width: 800px;
   font-size: 1.1em;
   text-align: center;
 }
@@ -209,8 +209,8 @@ h1, h2, h3, .basic-button {
   color: var(--accent-beige);
   display: block;
   border-radius: 30px;
-  border: var(--accent-beige) 2px solid;
-  padding: 0px 45px 80px 45px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px 85px 80px 85px;
 }
 
 
@@ -256,13 +256,11 @@ h1, h2, h3, .basic-button {
 }
 
 .illustration-description-wrapper {
-  display: flex;
-  margin: 0px auto 0px auto;
+  margin: 10px auto 20px auto;
   text-align: center;
-  font-family: monospace;
   line-height: 2;
   width: 600px;
-  color: var(--text-dark);
+  color: var(--accent-beige);
 }
 
 .illustration-download-btn-wrapper {
@@ -457,11 +455,19 @@ h1, h2, h3, .basic-button {
 
 /* --- License --- */
 
+.license-info-top {
+  font-size: 1.04em;
+  font-style: italic;
+  color:var(--text-light);
+  margin-top: 140px;
+  margin-bottom: 32px;
+}
+
 .license-info-box {
   box-sizing: border-box; /* 確保寬度計算包含 Padding */
   max-width: 560px;
   width: 100%;
-  margin: 80px auto 80px auto;    /* 左右 auto 確保置中 */
+  margin: 20px auto 80px auto;    /* 左右 auto 確保置中 */
   padding: 35px;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 20px;
@@ -470,16 +476,15 @@ h1, h2, h3, .basic-button {
 
 .license-info-box h3 { 
   color: var(--accent-beige); 
-  margin-top: 0;
-  font-size: 16px;
+  margin-top: 4px;
+  font-size: 18px;
  }
 
 
 .license-agreement {
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-  margin-top: 0px;
-  margin-bottom: 32px;
-  padding-bottom: 16px;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  padding-top: 12px;
   gap: 6px;
 }
 
@@ -505,26 +510,28 @@ h1, h2, h3, .basic-button {
   color: var(--accent-beige);
   display: block;
   border-radius: 30px;
-  border: var(--accent-beige) 2px solid;
-  padding: 45px 60px 45px 60px;
-  margin: 40px 0px 40px 0px;
+  border: var(--accent-beige) 0px solid;
+  padding: 0px 80px 35px 80px;
+  margin: 0px 0px 40px 0px;
 }
 
 .about-article-box h2{
-  margin-top: 0;
+  margin-top: 130px;
+  margin-bottom: 60px;
 }
 
 .about-article-box h3{
-  margin-top: 36px;
+  margin-top: 50px;
 }
 
 .about-article-box p{
-  font-size: 16px;
+  font-size: 1.1em;
   margin-top: 20px;
 }
 
 .about-article-box a{
   text-decoration: none;
+  font-size: 1.1em;
   color: orange;
 }
 
@@ -635,7 +642,11 @@ h1, h2, h3, .basic-button {
   .category-grid { grid-template-columns: repeat(1, 1fr); }
   .download-btn { width: 90vw; padding: 16px 0; text-align: center; }
   .illustration-tags-wrapper { width: 90vw; }
-  .illustration-description-wrapper { width: 90vw; }
+  .illustration-description-wrapper { width: 95vw; }
+
+  .about-article-box {padding: 0px 4px 35px 4px;
+  }
+  .license-article-box { padding: 20px 4px 80px 4px;}
 }
 
 
