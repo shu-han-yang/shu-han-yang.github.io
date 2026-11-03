@@ -1,0 +1,17 @@
+---
+layout: null
+permalink: /search-index.json
+---
+[
+{% for item in site.illustrations %}
+  {
+    "title": {{ item.title.en | jsonify }},
+    "title_zh": {{ item.title.zh | jsonify }},
+    "title_ja": {{ item.title.ja | jsonify }},
+    "tags": {{ item.tags | jsonify }},
+    "category": {{ item.categories | jsonify }},
+    "url": {{ item.url | jsonify }},
+    "image": {{ item.image | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

@@ -90,10 +90,6 @@ layout: default
    </nav>
 
 
-  <!-- 瀏覽器上一頁 -->
-<a href="javascript:history.back()">← Back</a>
-
-
    
 <section class="related-works">
   <h3>Related Works</h3>
@@ -114,7 +110,7 @@ layout: default
               {% if item.image %}
                 <img src="/assets/images/illustrations/thumbnail/{{ item.image }}-thumbnail.png" alt="{{ item.title.en }}">
               {% endif %}
-              <h4>{{ item.title.en }}</h4>
+              <!-- <h4>{{ item.title.en }}</h4> --> 
             </a>
           </div>
         {% endif %}
@@ -123,7 +119,11 @@ layout: default
   </div>
 </section>
 
-  </article>
+</article>
+
+<!-- 上一頁 -->
+<div class="back-links"><a href="javascript:history.back()">← Back</a>     <a href="/illustrations/">← Back to All</a></div>
+
 
 
 </main>

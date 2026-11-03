@@ -1022,6 +1022,9 @@
 <loc>http://localhost:4000/license.html</loc>
 </url>
 <url>
+<loc>http://localhost:4000/search/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/illustrations/</loc>
 </url>
 <url>

@@ -1,0 +1,37 @@
+---
+layout: default
+title:
+  en: Search Illustrations
+permalink: /search/
+---
+
+<script>
+  window.searchIndexUrl =
+    {{ '/search-index.json' | relative_url | jsonify }};
+</script>
+
+<main class="main-content container illustration-list-page">
+
+  <h1 class="section-title">Illustrations Library</h1>
+
+  <h2 class="section-subtitle">Search Results</h2>
+
+  {% include category-nav.html %}
+
+  {% include search-bar.html %}
+
+  <p id="search-result-count">
+    Search results: 0 items
+  </p>
+
+  <div id="search-results" class="illustration-grid"></div>
+
+  <nav id="search-pagination" class="pagination" aria-label="Search result pages"></nav>
+
+  <p id="search-no-results" hidden>
+    No illustrations found.
+  </p>
+
+</main>
+
+<script src="{{ '/assets/js/illustration-search.js' | relative_url }}" defer></script>

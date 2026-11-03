@@ -293,7 +293,6 @@ h1, h2, h3, .basic-button {
 }
 
 
-
 .category-item {
   display: inline-block;
   background-color: rgba(249, 241, 220, 0.1);
@@ -304,13 +303,13 @@ h1, h2, h3, .basic-button {
   text-decoration: none;
   font-size: 13px;
   transition: 0.3s;
-  line-height: 2; /* 增加一點行高確保換行時不重疊 */
-  margin: 4px 2px;  /* 增加一點外距讓按鈕間有呼吸空間 */
+  line-height: 2; 
+  margin: 4px 2px; 
 }
 
 .category-item.active {
   background-color: var(--accent-beige);
-  color: var(--text-dark); /* 使用你變數中的深紫色 */
+  color: var(--text-dark); 
   font-weight: 700;
 }
 
@@ -374,7 +373,9 @@ h1, h2, h3, .basic-button {
 .close-btn:hover {
   background-color: #555;
 }
+
 /* ----Related Works 區塊外層容器 ----*/
+
 /* 1. Related Works 區塊外層容器 */
 .related-works {
   width: 100%;
@@ -385,9 +386,9 @@ h1, h2, h3, .basic-button {
 }
 
 .related-works h3 {
-  font-size: 1.25rem;
+  font-size: 1.65rem;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: 36px;
   color: var(--light-purple);
 }
 
@@ -420,7 +421,7 @@ h1, h2, h3, .basic-button {
 /* 4. 圖片設定 (防止圖片比例變形並填滿卡片寬度) */
 .related-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;          /* 固定圖片長寬比 (可改為 1/1 正方形或 16/9) */
+  aspect-ratio: 1/1;          /* 固定圖片長寬比 (可改為 1/1 正方形或 16/9) */
   object-fit: cover;            /* 自動裁切填滿，不變形 */
   border-radius: 8px;           /* 圖片圓角 (可依喜好保留或拿掉) */
   display: block;
@@ -432,8 +433,8 @@ h1, h2, h3, .basic-button {
   font-size: 0.95rem;
   margin-top: 10px;
   margin-bottom: 0;
-  font-weight: 500;
-  color: var(--text-dark);
+  font-weight: 400;
+  color: var(--light-purple);
   line-height: 1.4;
   /* 若標題太長，單行截斷加省略號 (選用) */
   white-space: nowrap;
@@ -441,11 +442,33 @@ h1, h2, h3, .basic-button {
   text-overflow: ellipsis;
 }
 
+.back-links {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.back-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 12px;
+}
+.back-links a:hover {
+  color: var(--light-purple);
+}
+
 /* 6. 手機版響應式 (螢幕寬度小於 768px 時改為單欄或兩欄，避免 3 張擠在一起太小) */
 @media (max-width: 768px) {
   .related-grid {
     grid-template-columns: 1fr; /* 手機上直向排列 (若想兩欄可改為 repeat(2, 1fr)) */
-    gap: 16px;
+    gap: 25px;
+    width: 85%; /* 手機版縮小寬度，避免貼邊 */
+    margin: 0 auto;
+  }
+  .related-card img{
+    object-fit:  scale-down; /* 手機版改為完整顯示圖片，避免裁切 */
   }
 }
 
@@ -566,18 +589,19 @@ h1, h2, h3, .basic-button {
   gap: 20px;
   width: 100%;
   margin: 0 auto;
+  margin-top: 60px;
 }
 
 .illustration-card {
   display: flex;
   flex-direction: column; /* 👈 關鍵：讓子元素垂直排列 */
   background-color: var(--text-dark);
-  border: var(--text-dark) 2px solid; /* 卡片邊框 */
+  border: var(--text-dark) 2px solid; 
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   height: 100%; /* 確保所有卡片高度一致 */
-  width: 100%;
+  align-items: center; /* 讓內容置中 */
 }
 
 .card-link {
@@ -589,6 +613,7 @@ h1, h2, h3, .basic-button {
 .sample-area {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .sample-area img {
@@ -634,9 +659,9 @@ h1, h2, h3, .basic-button {
   }
 
   .illustration-grid { grid-template-columns: repeat(1, 1fr); /* 👈 改為一欄 */
-    width: 84%; 
-    margin: 0 auto;
+    margin: 60px 0; /* 手機版左右縮小間距 */
     gap: 25px;}
+  .illustration-card { margin: 0 24px;} /* 手機版卡片高度自動調整 */
   .category-grid { grid-template-columns: repeat(1, 1fr); }
   .download-btn { width: 90vw; padding: 16px 0; text-align: center; }
   .illustration-tags-wrapper { width: 90vw; }
@@ -646,6 +671,70 @@ h1, h2, h3, .basic-button {
   }
   .license-article-box { padding: 20px 4px 80px 4px;}
 }
+
+ 
+/* Search bar */
+ 
+.illustration-search-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 420px;
+  margin: 40px auto 20px auto;
+}
+
+.illustration-search-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 18px;
+  border: 1px solid var(--accent-beige);
+  background-color: var(--accent-beige);
+  color: var(--text-dark);
+  border-radius: 32px;
+  font-size: 16px;
+}
+
+
+#search-result-count {
+  margin: 24px 0;
+}
+
+#search-pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 32px 0;
+}
+
+#search-pagination button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+#search-pagination button:hover {
+  text-decoration: underline;
+}
+
+#search-pagination button.page-direct {
+  color: var(--accent-beige);
+}
+
+#search-pagination button.page-num {
+  color: var(--accent-beige);
+}
+
+#search-pagination button.page-num:hover {
+  text-decoration: underline;
+}
+
+#search-no-results {
+  text-align: center;
+  margin: 48px 0;
+}
+ 
 
 
 /* Paginator */
@@ -663,7 +752,7 @@ h1, h2, h3, .basic-button {
   color: var(--accent-beige);
   padding: 8px 16px;
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 700;
   margin-top: 30px;
   text-decoration: none;
 }
@@ -671,7 +760,7 @@ h1, h2, h3, .basic-button {
 .page-num.current {
   color: var(--light-purple);
   cursor: default;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .page-num {
